@@ -408,7 +408,7 @@ function Nav() {
           <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-primary to-secondary text-primary-foreground">
             <Sparkles className="h-4 w-4" />
           </span>
-          <span className="truncate font-semibold tracking-tight">Portfolio · CNS & AI</span>
+          <span className="truncate font-semibold tracking-tight">Digital Portfolio</span>
         </a>
         <nav className="hidden gap-1 md:flex">
           {navItems.map((n) => (
@@ -576,8 +576,8 @@ function About() {
 
           <ul className="mt-6 grid gap-2 text-sm">
             <InfoRow icon={GraduationCap} label="Ngành học" value="Kinh Tế Quốc Tế" />
-            <InfoRow icon={BookOpen} label="Trường" value="[Điền trường]" />
-            <InfoRow icon={BookOpen} label="Lớp" value="[Điền lớp]" />
+            <InfoRow icon={BookOpen} label="Trường" value="Đại Học Kinh tế -ĐHQGHN" />
+            <InfoRow icon={BookOpen} label="Lớp" value="Kinh Tế Quốc Tế 6" />
             <InfoRow icon={Mail} label="Liên hệ" value="25051068@vnu.edu.vn " />
           </ul>
         </div>
@@ -648,8 +648,8 @@ function About() {
           </div>
 
           <div className="rounded-3xl border border-border bg-card p-6 text-center">
-            <p className="mx-auto max-w-xl text-sm font-medium italic text-foreground">
-              "Học không chỉ để biết, mà học để làm được. Công nghệ là công cụ, nhưng tư duy mới là chìa khóa."
+            <p className="mx-auto max-w-xl text-sm font-medium italic text-foreground whitespace-pre-line">
+              "Học không chỉ để biết, mà học để làm được. Công nghệ là công cụ, nhưng tư duy mới là chìa khóa."&nbsp;
               -Nguyễn Bảo Thy-
             </p>
           </div>
@@ -704,7 +704,7 @@ function Overview() {
         <SectionHeader
           eyebrow="Tổng quan dự án"
           title="Hành trình 6 nhiệm vụ học tập"
-          desc="Sáu bài tập tính điểm cuối kỳ được kết nối thành một hành trình phát triển năng lực số và AI có trách nhiệm."
+          desc="6 bài tập – 6 sản phẩm số"
         />
         <div className="relative">
           {/* Vertical timeline line */}
@@ -742,8 +742,8 @@ function Overview() {
                     <div className="min-w-0">
                       <div className="text-xs font-medium text-muted-foreground">
                         {i === 0 && "Bài 1 - Bài tập 1 của mục 1.4: Thao tác cơ bản với tệp tin và thư mục"}
-                        {i === 1 && "Bài 2 - Bai tap 2 cua mục 2.4: Tìm kiem va đanh gia thong tin học thuật"}
-                        {i === 2 && "Bài 3 - Bai tap 2 cua mục 3.4: Viet Prompt hieu qua cho cac tac vu hoc tap"}
+                        {i === 1 && "Bài 2 - Bài Tập 2 của mục 2.4: Tìm kiếm và đánh giá thông tin học thuật"}
+                        {i === 2 && "Bài 3 - Bài tập 2 của mục 3.4: Viết Prompt hiệu quả cho cac tác vụ hoc tập"}
                         {i === 3 && "Bài 4 - Bài tập 3 của mục 4.4: Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm"}
                         {i === 4 && "Bài 5 - Bài tập 2 của mục 5.4: Sử dụng Al tạo sinh để hỗ trợ sáng tạo nội dung"}
                         {i === 5 && "Bài 6 - Bài tập 4 của mục 6.4: Sử dụng Al có trách nhiệm trong học tập và nghiên cứu"}
@@ -1351,7 +1351,7 @@ function Footer() {
             <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-primary to-secondary text-primary-foreground">
               <Sparkles className="h-4 w-4" />
             </span>
-            <span className="font-semibold">Portfolio · CNS & AI</span>
+            <span className="font-semibold">Digital Portfolio</span>
           </div>
           <p className="mt-3 text-sm text-muted-foreground">
             Portfolio được xây dựng nhằm phục vụ mục đích học tập và tự đánh giá năng lực số.
@@ -1363,7 +1363,7 @@ function Footer() {
           </div>
           <div className="mt-2 text-sm">Nguyễn Bảo Thy</div>
           <div className="text-sm text-muted-foreground whitespace-pre-line">
-            Khoa: Kinh Tế Quốc Tế{"\n"}Lớp: KTQT 6
+            Khoa: Kinh Tế Quốc Tế{"\n"}Lớp: Kinh Tế Quốc Tế 6
           </div>
         </div>
         <div>
