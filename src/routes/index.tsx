@@ -1114,33 +1114,19 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
               <table className="w-full min-w-[640px] border-collapse text-sm">
                 <thead>
                   <tr className="bg-muted/60 text-left text-xs uppercase tracking-wide text-muted-foreground">
-                    <th className="p-2">Thành viên</th>
-                    <th className="p-2">Nhiệm vụ</th>
-                    <th className="p-2">Hạn</th>
-                    <th className="p-2">Trạng thái</th>
-                    <th className="p-2">Ghi chú</th>
+                    <th className="p-2">Tên công việc</th>
+                    <th className="p-2">Mô tả công việc</th>
+                    <th className="p-2">Người thực hiện</th>
+                    <th className="p-2">Thời hạn hoàn thành</th>
                   </tr>
                 </thead>
                 <tbody>
                   {p.team.map((t) => (
                     <tr key={t.m} className="border-t border-border align-top">
                       <td className="p-2 font-medium">{t.m}</td>
-                      <td className="p-2 text-muted-foreground">{t.task}</td>
+                      <td className="p-2 whitespace-pre-line text-muted-foreground">{t.task}</td>
+                      <td className="p-2 text-muted-foreground">{t.who}</td>
                       <td className="p-2 text-muted-foreground">{t.due}</td>
-                      <td className="p-2">
-                        <span
-                          className={`rounded-full px-2 py-0.5 text-xs font-semibold ${
-                            t.status === "Hoàn thành"
-                              ? "bg-secondary text-secondary-foreground"
-                              : t.status === "Đang làm"
-                                ? "bg-accent text-accent-foreground"
-                                : "bg-primary/30 text-foreground"
-                          }`}
-                        >
-                          {t.status}
-                        </span>
-                      </td>
-                      <td className="p-2 text-muted-foreground">{t.note}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -1148,6 +1134,7 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
             </div>
           </Block>
         )}
+
 
         {/* Dự án 5: vai trò AI vs con người */}
         {p.roles && (
