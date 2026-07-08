@@ -715,7 +715,12 @@ function Overview() {
                     </span>
                     <div className="min-w-0">
                       <div className="text-xs font-medium text-muted-foreground">
-                        Nhiệm vụ {i + 1} · {p.tag}
+                        {i === 0 && "Bài 1 - Bài tập 1 của mục 1.4: Thao tác cơ bản với tệp tin và thư mục"}
+                        {i === 1 && "Bài 2 - Bai tap 2 cua mục 2.4: Tìm kiem va đanh gia thong tin học thuật"}
+                        {i === 2 && "Bài 3 - Bai tap 2 cua mục 3.4: Viet Prompt hieu qua cho cac tac vu hoc tap"}
+                        {i === 3 && "Bài 4 - Bài tập 3 của mục 4.4: Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm"}
+                        {i === 4 && "Bài 5 - Bài tập 2 của mục 5.4: Sử dụng Al tạo sinh để hỗ trợ sáng tạo nội dung"}
+                        {i === 5 && "Bài 6 - Bài tập 4 của mục 6.4: Sử dụng Al có trách nhiệm trong học tập và nghiên cứu"}
                       </div>
                       <h3 className="truncate text-base font-semibold">{p.title}</h3>
                     </div>
