@@ -722,7 +722,7 @@ function Overview() {
                         {i === 4 && "Bài 5 - Bài tập 2 của mục 5.4: Sử dụng Al tạo sinh để hỗ trợ sáng tạo nội dung"}
                         {i === 5 && "Bài 6 - Bài tập 4 của mục 6.4: Sử dụng Al có trách nhiệm trong học tập và nghiên cứu"}
                       </div>
-                      <h3 className="truncate text-base font-semibold">{p.title}</h3>
+                      
                     </div>
                   </div>
                   <p className="mt-3 line-clamp-2 text-sm text-muted-foreground">{p.objective}</p>
