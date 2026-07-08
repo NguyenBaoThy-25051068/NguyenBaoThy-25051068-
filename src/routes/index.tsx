@@ -648,9 +648,9 @@ function About() {
           </div>
 
           <div className="rounded-3xl border border-border bg-card p-6 text-center">
-            <p className="mx-auto max-w-xl text-sm font-medium italic text-foreground whitespace-pre-line">
-              "Học không chỉ để biết, mà học để làm được. Công nghệ là công cụ, nhưng tư duy  {"\n"} mới là chìa khóa."
-              {"\n"}-Nguyễn Bảo Thy-
+            <p className="mx-auto max-w-xl text-sm font-medium italic text-foreground">
+              "Học không chỉ để biết, mà học để làm được. Công nghệ là công cụ, nhưng tư duy mới là chìa khóa."
+              -Nguyễn Bảo Thy-
             </p>
           </div>
 
