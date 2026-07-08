@@ -453,6 +453,36 @@ const projects = [
       "Sử dụng AI đúng cách giúp người học phát triển bền vững hơn.",
     ],
     evidence: "Ảnh bộ nguyên tắc cá nhân + trích dẫn quy định nhà trường",
+    strengths: [
+      "Phân tích sâu chính sách AI của các trường đại học, đặc biệt là case study BUV với thang đánh giá AI nhiều cấp độ.",
+      "Thực hành minh bạch: ghi rõ từng bước sử dụng AI (gợi ý khía cạnh, lập dàn ý, chỉnh sửa ngôn ngữ, kiểm tra lỗi).",
+      "Xây dựng được bộ 7 nguyên tắc cá nhân rõ ràng, có thể áp dụng trong thực tế.",
+    ],
+    improvements: [
+      "Cần tìm hiểu thêm về các công cụ phát hiện AI (AI detection tools) và cách hoạt động.",
+      "Có thể bổ sung thêm so sánh với chính sách AI của các trường đại học quốc tế.",
+    ],
+    lessons: [
+      "AI là trợ lý, không phải 'người làm hộ' – ranh giới quan trọng nhất nằm ở việc người học có thực sự hiểu và đóng góp trí tuệ hay không.",
+      "Minh bạch là chìa khóa: ghi rõ mình dùng AI ở bước nào, công cụ nào.",
+      "Chịu trách nhiệm hoàn toàn về sản phẩm cuối cùng – không đổ lỗi cho AI nếu nội dung sai.",
+      "Ưu tiên rèn kỹ năng cốt lõi trước, dùng AI để nâng cao chất lượng, không thay thế nỗ lực học tập.",
+    ],
+    academicIntegrity: {
+      howUseAI: [
+        "Sử dụng ChatGPT (GPT-5.1 Pro) để gợi ý 5-7 khía cạnh chính khi phân tích tác động của AI đến liêm chính học thuật.",
+        "Dùng AI để lập dàn ý chi tiết cho bài luận với bố cục Mở bài, 3 luận điểm chính, Kết luận.",
+        "Nhờ AI đào sâu phân tích một luận điểm cụ thể (nguy cơ gian lận và suy giảm kỹ năng).",
+        "Dùng AI để gợi ý cách diễn đạt học thuật hơn cho các đoạn văn tự viết.",
+        "Kiểm tra lỗi chính tả, ngữ pháp bằng AI trước khi nộp bài.",
+      ],
+      commitments: [
+        "AI chỉ đóng vai trò trợ lý gợi ý và kiểm tra, nội dung cuối cùng là sản phẩm của quá trình đọc, suy nghĩ và viết của chính tôi.",
+        "Tất cả lập luận, ví dụ và trích dẫn nguồn đều được tôi lựa chọn, kiểm tra và chịu trách nhiệm.",
+        "Tôi đã viết lại bằng lời của mình, thêm ví dụ cá nhân, và đối chiếu với nguồn học thuật gốc.",
+        "Ghi nhận rõ ràng việc sử dụng AI theo yêu cầu của giảng viên.",
+      ],
+    },
   },
 ];
 
