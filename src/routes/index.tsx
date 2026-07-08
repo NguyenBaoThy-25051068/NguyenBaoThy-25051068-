@@ -1116,27 +1116,110 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
           </Block>
         )}
 
-        <Block icon={Brain} title="Phân tích kết quả" wide>
-          <ul className="grid gap-2 text-sm text-muted-foreground">
-            {p.analysis.map((a, idx) => (
-              <li key={idx} className="flex gap-2">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-secondary-foreground" />
-                <span>{a}</span>
-              </li>
-            ))}
-          </ul>
-        </Block>
+        {/* Phân tích - Đánh giá (custom cho dự án 1) */}
+        {p.strengths ? (
+          <Block icon={Brain} title="Phân tích - Đánh giá" wide>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="rounded-2xl border border-border bg-card/60 p-4">
+                <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold text-emerald-600">
+                  <CheckCircle2 className="h-4 w-4" /> Điểm tốt
+                </h4>
+                <ul className="grid gap-2 text-sm text-muted-foreground">
+                  {p.strengths.map((s, idx) => (
+                    <li key={idx} className="flex gap-2">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
+                      <span>{s}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-2xl border border-border bg-card/60 p-4">
+                <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold text-amber-600">
+                  <Wrench className="h-4 w-4" /> Cần cải thiện
+                </h4>
+                <ul className="grid gap-2 text-sm text-muted-foreground">
+                  {p.improvements.map((imp, idx) => (
+                    <li key={idx} className="flex gap-2">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" />
+                      <span>{imp}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-2xl border border-border bg-card/60 p-4">
+                <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold text-primary">
+                  <Lightbulb className="h-4 w-4" /> Bài học rút ra
+                </h4>
+                <ul className="grid gap-2 text-sm text-muted-foreground">
+                  {p.lessons.map((l, idx) => (
+                    <li key={idx} className="flex gap-2">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                      <span>{l}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </Block>
+        ) : (
+          <Block icon={Brain} title="Phân tích kết quả" wide>
+            <ul className="grid gap-2 text-sm text-muted-foreground">
+              {p.analysis.map((a, idx) => (
+                <li key={idx} className="flex gap-2">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-secondary-foreground" />
+                  <span>{a}</span>
+                </li>
+              ))}
+            </ul>
+          </Block>
+        )}
 
-        <Block icon={Lightbulb} title="Bài học rút ra">
-          <ul className="grid gap-2 text-sm text-muted-foreground">
-            {p.lesson.map((l, idx) => (
-              <li key={idx} className="flex gap-2">
-                <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <span>{l}</span>
-              </li>
-            ))}
-          </ul>
-        </Block>
+        {/* Liêm chính học thuật & Sử dụng AI (custom cho dự án 1) */}
+        {p.academicIntegrity && (
+          <Block icon={ShieldCheck} title="Liêm chính học thuật & Sử dụng AI" wide>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <h4 className="mb-2 flex items-center gap-2 text-sm font-semibold">
+                  <Bot className="h-4 w-4 text-primary" /> Cách tôi sử dụng AI
+                </h4>
+                <ul className="grid gap-2 text-sm text-muted-foreground">
+                  {p.academicIntegrity.howUseAI.map((item, idx) => (
+                    <li key={idx} className="flex gap-2">
+                      <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h4 className="mb-2 flex items-center gap-2 text-sm font-semibold">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600" /> Cam kết liêm chính
+                </h4>
+                <ul className="grid gap-2 text-sm text-muted-foreground">
+                  {p.academicIntegrity.commitments.map((item, idx) => (
+                    <li key={idx} className="flex gap-2">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </Block>
+        )}
+
+        {!p.strengths && (
+          <Block icon={Lightbulb} title="Bài học rút ra">
+            <ul className="grid gap-2 text-sm text-muted-foreground">
+              {p.lesson.map((l, idx) => (
+                <li key={idx} className="flex gap-2">
+                  <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                  <span>{l}</span>
+                </li>
+              ))}
+            </ul>
+          </Block>
+        )}
 
         <Block icon={ImageIcon} title="Minh chứng">
           <EvidencePlaceholder text={p.evidence} />
