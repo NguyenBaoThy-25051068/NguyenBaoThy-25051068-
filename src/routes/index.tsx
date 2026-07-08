@@ -1120,14 +1120,14 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
 
         {/* Dự án 3: prompt v1 v2 + so sánh */}
         {p.promptV1 && (
-          <Block icon={MessageSquareCode} title="Prompt v1 (ban đầu)">
+          <Block icon={MessageSquareCode} title="Prompt cơ bản (ban đầu)">
             <div className="rounded-xl border border-border bg-muted/50 p-3 text-sm text-muted-foreground">
               “{p.promptV1}”
             </div>
           </Block>
         )}
         {p.promptV2 && (
-          <Block icon={MessageSquareCode} title="Prompt v2 (cải tiến)">
+          <Block icon={MessageSquareCode} title="Prompt nâng cao (cải tiến)">
             <div
               className="rounded-xl border border-primary/30 bg-primary/10 p-3 text-sm text-foreground"
               style={{ boxShadow: "var(--shadow-soft)" }}
@@ -1137,7 +1137,7 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
           </Block>
         )}
         {p.compare && (
-          <Block icon={Layers} title="Bảng so sánh Prompt v1 và v2" wide>
+          <Block icon={Layers} title="Bảng so sánh Prompt cơ bản và nâng cao" wide>
             <div className="overflow-x-auto">
               <table className="w-full min-w-[640px] border-collapse text-sm">
                 <thead>
