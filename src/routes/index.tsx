@@ -1437,14 +1437,14 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
 
         <Block icon={ImageIcon} title="Minh chứng">
           {p.evidenceImages && p.evidenceImages.length > 0 ? (
-            <div className="grid gap-3 sm:grid-cols-2">
+            <div className="flex gap-3 overflow-x-auto pb-2">
               {p.evidenceImages.map((img, idx) => (
-                <figure key={idx} className="overflow-hidden rounded-xl border border-border bg-background/60">
+                <figure key={idx} className="w-56 shrink-0 overflow-hidden rounded-xl border border-border bg-background/60">
                   <img
                     src={duan1Assets[img.src]?.url}
                     alt={img.caption}
                     loading="lazy"
-                    className="h-40 w-full object-cover"
+                    className="h-28 w-full object-cover"
                   />
                   <figcaption className="px-3 py-2 text-xs text-muted-foreground">{img.caption}</figcaption>
                 </figure>
