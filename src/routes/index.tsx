@@ -460,10 +460,10 @@ function Hero() {
           <span className="inline-flex items-center gap-2 rounded-full bg-white/70 px-3 py-1 text-xs font-medium text-primary-foreground shadow-sm backdrop-blur">
             <Heart className="h-3.5 w-3.5" /> Bài tập dự án cá nhân · Học kỳ 2026
           </span>
-          <h1 className="font-digital mt-5 text-4xl font-bold leading-[1.15] sm:text-5xl md:text-6xl">
-            <span className="text-gradient">Digital Portfolio</span>
+          <h1 className="mt-5 text-4xl font-semibold leading-[1.1] sm:text-5xl md:text-6xl">
+            <span className="text-gradient">Portfolio Kỹ thuật số</span>
             <br />
-            <span className="text-foreground/90">Kỹ thuật số cá nhân</span>
+            <span>cá nhân</span>
           </h1>
           <p className="mt-5 max-w-xl text-base text-muted-foreground sm:text-lg">
             Hành trình học tập môn <b>Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo</b> – nơi
