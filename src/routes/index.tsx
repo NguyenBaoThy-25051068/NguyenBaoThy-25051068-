@@ -1461,7 +1461,11 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
             <div className="grid gap-3">
               <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
                 {p.evidenceImages.slice(0, 4).map((img, idx) => (
-                  <figure key={idx} className="overflow-hidden rounded-xl border border-border bg-background/60">
+                  <figure
+                    key={idx}
+                    onClick={() => setLightbox(idx)}
+                    className="cursor-pointer overflow-hidden rounded-xl border border-border bg-background/60 transition hover:opacity-90"
+                  >
                     <img
                       src={duan1Assets[img.src]?.url}
                       alt={img.caption}
@@ -1474,7 +1478,11 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
               </div>
               <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
                 {p.evidenceImages.slice(4).map((img, idx) => (
-                  <figure key={idx} className="overflow-hidden rounded-xl border border-border bg-background/60">
+                  <figure
+                    key={idx}
+                    onClick={() => setLightbox(idx + 4)}
+                    className="cursor-pointer overflow-hidden rounded-xl border border-border bg-background/60 transition hover:opacity-90"
+                  >
                     <img
                       src={duan1Assets[img.src]?.url}
                       alt={img.caption}
