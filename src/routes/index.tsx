@@ -306,10 +306,36 @@ const projects = [
     ],
     tools: ["Trello", "Notion", "Google Sheets", "Microsoft Planner"],
     team: [
-      { m: "Thành viên A", task: "Nghiên cứu tài liệu", due: "12/03", status: "Hoàn Thành", note: "Đã tổng hợp 6 nguồn." },
-      { m: "Thành viên B", task: "Viết nội dung slide", due: "15/03", status: "Hoàn Thành", note: "Cần bổ sung\u00a0" },
-      { m: "Thành viên C", task: "Thiết kế đồ họa", due: "18/03", status: "Hoàn Thành", note: "Chờ nội dung từ B." },
-      { m: "Thành viên D (mình)", task: "Điều phối & kiểm tra chất lượng", due: "20/03", status: "Hoàn thành", note: "Tổng hợp phản hồi." },
+      {
+        m: "Mô tả cách sử dụng AI cùng các prompt",
+        task: "1. Giới thiệu AI và Prompt\n2. Cách sử dụng AI hiệu quả\n3. Các loại prompt phổ biến",
+        who: "Vũ Hà Trang",
+        due: "20/4/2026",
+      },
+      {
+        m: "Tìm 1 ứng dụng của AI và công nghệ số trong lĩnh vực Luật",
+        task: "1. Giới thiệu về AI pháp luật\n2. AI pháp luật là gì\n3. Đặc điểm của AI pháp luật\n4. Cách sử dụng AI pháp luật\n5. Hướng dẫn cách đặt câu hỏi",
+        who: "Nguyễn Bảo Thy",
+        due: "20/4/2026",
+      },
+      {
+        m: "Tìm 1 ứng dụng của AI và công nghệ số trong lĩnh vực kinh tế",
+        task: "1. Giới thiệu về Misa\n2. Tổng quát về Misa Ava\n3. Cơ chế vận hành và tương tác với AI Misa Ava",
+        who: "Nguyễn Thành Trung",
+        due: "20/4/2026",
+      },
+      {
+        m: "Tìm hiểu nội dung về lợi ích và thách thức của các ứng dụng",
+        task: "1. Lợi ích và thách thức của Misa\n2. Lợi ích và thách thức của AI pháp luật",
+        who: "Phan Diệp Thuý",
+        due: "20/4/2026",
+      },
+      {
+        m: "Tìm hiểu nội dung về kết luận và định hướng sử dụng AI và công nghệ số trong tương lai",
+        task: "1. Thực trạng của AI\n2. Định hướng AI và công nghệ số trong tương lai",
+        who: "Lương Thị Thu Trang",
+        due: "20/4/2026",
+      },
     ],
     analysis: [
       "Công cụ trực tuyến giúp nhóm làm việc minh bạch và dễ theo dõi tiến độ.",
