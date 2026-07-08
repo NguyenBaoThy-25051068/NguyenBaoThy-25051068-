@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import avatarAsset from "@/assets/avatar.jpg.asset.json";
 import {
   FolderTree,
   Search,
