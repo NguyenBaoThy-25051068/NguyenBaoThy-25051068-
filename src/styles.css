@@ -183,6 +183,12 @@
   color: transparent;
 }
 
+.font-digital {
+  font-family: "Orbitron", "Share Tech Mono", ui-monospace, monospace;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
 .card-hover {
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
