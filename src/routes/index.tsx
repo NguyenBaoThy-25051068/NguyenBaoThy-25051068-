@@ -98,15 +98,20 @@ const projects = [
     title: "Tìm kiếm và đánh giá thông tin học thuật",
     progress: 100,
     skills: ["Tìm kiếm nâng cao", "Đánh giá nguồn", "Tư duy phản biện"],
+    summary:
+      "Bài tập này giúp tôi phân tích tác động của trí tuệ nhân tạo (AI) đối với giáo dục đại học thông qua việc tìm kiếm và đánh giá thông tin học thuật từ các nguồn đáng tin cậy.",
     objective:
-      "Biết sử dụng các toán tử tìm kiếm nâng cao và đánh giá độ tin cậy của nguồn thông tin học thuật.",
+      "Phân tích tác động của AI đối với giáo dục đại học; tìm kiếm thông tin từ các nguồn học thuật đáng tin cậy; đánh giá độ tin cậy của 12 tài liệu theo 4 tiêu chí chuẩn; tổng hợp và phân loại nguồn thông tin một cách có hệ thống.",
     steps: [
-      "Chọn chủ đề: “Ứng dụng AI tạo sinh trong giáo dục đại học”.",
-      "Áp dụng hơn 4 toán tử nâng cao trên Google Scholar và Google Search.",
-      "Ghi lại 6 nguồn khác nhau và lập bảng đánh giá độ tin cậy.",
-      "So sánh và chọn ra 3 nguồn học thuật đáng tin cậy nhất.",
+      "Xác định chủ đề nghiên cứu: Tác động của AI trong giáo dục đại học.",
+      "Thiết lập từ khóa tìm kiếm: 'AI in higher education', 'Artificial Intelligence and pedagogy', 'AI adoption in universities'.",
+      "Tìm kiếm trên các cơ sở dữ liệu: Google Scholar, Microsoft Academic, Springer, Elsevier.",
+      "Thu thập 12 tài liệu: 7 bài báo khoa học, 2 sách chuyên khảo, 3 nguồn mở.",
+      "Đánh giá từng nguồn theo 4 tiêu chí: Tác giả, Cơ quan xuất bản, Phương pháp nghiên cứu, Trích dẫn và Tính cập nhật.",
+      "Lập bảng tổng hợp đánh giá và phân loại độ tin cậy.",
+      "Viết báo cáo tổng hợp kết quả nghiên cứu.",
     ],
-    tools: ["Google Search", "Google Scholar", "Trang chủ trường đại học", "Báo cáo PDF"],
+    tools: ["Google Scholar", "Microsoft Academic", "Springer", "Elsevier", "Tạp chí Quản lý Nhà nước", "Tạp chí Công thương"],
     operators: [
       { op: "site:", ex: 'site:edu.vn "trí tuệ nhân tạo"' },
       { op: "filetype:", ex: "filetype:pdf ứng dụng AI trong giáo dục" },
@@ -142,7 +147,7 @@ const projects = [
         limit: "Chủ yếu góc nhìn của một trường.",
       },
       {
-        name: "Blog công nghệ",
+        name: "Blog côngng nghệ",
         author: "Không rõ tác giả",
         year: "2025",
         trust: "Thấp",
