@@ -65,6 +65,15 @@ const projects = [
       "Một cấu trúc thư mục tốt tiết kiệm thời gian và tăng hiệu quả học tập lâu dài.",
     ],
     evidence: "Ảnh chụp màn hình cấu trúc thư mục môn học",
+    evidenceImages: [
+      { src: "duan1-15", caption: "Thanh Taskbar và tìm kiếm trên Windows" },
+      { src: "duan1-16", caption: "Cửa sổ File Explorer – PC này" },
+      { src: "duan1-17", caption: "Tạo file GhiChu.txt" },
+      { src: "duan1-18", caption: "Đổi tên file thành GhiChuQuanTrong.txt" },
+      { src: "duan1-19", caption: "Tạo thư mục TaiLieu" },
+      { src: "duan1-20", caption: "Menu chuột phải – Sao chép tệp tin" },
+      { src: "duan1-21", caption: "Di chuyển file vào thư mục TaiLieu" },
+    ],
     strengths: [
       "Thực hiện đầy đủ tất cả các thao tác cơ bản với tệp tin.",
       "Chụp màn hình chi tiết từng bước thực hiện làm minh chứng.",
