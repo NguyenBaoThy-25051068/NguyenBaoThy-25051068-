@@ -1061,10 +1061,11 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
 
   useEffect(() => {
     if (lightbox === null) return;
+    const total = p.evidenceImages?.length ?? 0;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setLightbox(null);
-      if (e.key === "ArrowLeft") setLightbox((i) => (i === null ? null : i > 0 ? i - 1 : p.evidenceImages.length - 1));
-      if (e.key === "ArrowRight") setLightbox((i) => (i === null ? null : (i + 1) % p.evidenceImages.length));
+      if (e.key === "ArrowLeft") setLightbox((i) => (i === null || total === 0 ? null : i > 0 ? i - 1 : total - 1));
+      if (e.key === "ArrowRight") setLightbox((i) => (i === null || total === 0 ? null : (i + 1) % total));
     };
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKey);
@@ -1072,7 +1073,7 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
       document.body.style.overflow = "";
       window.removeEventListener("keydown", onKey);
     };
-  }, [lightbox, p.evidenceImages.length]);
+  }, [lightbox, p.evidenceImages?.length]);
 
   return (
     <article
