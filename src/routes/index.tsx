@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import avatarAsset from "@/assets/avatar.jpg.asset.json";
 import {
   FolderTree,
   Search,
@@ -563,11 +564,12 @@ function About() {
           className="reveal card-hover rounded-3xl border border-border bg-card p-6"
           style={{ boxShadow: "var(--shadow-soft)" }}
         >
-          <div
-            className="mx-auto grid h-40 w-40 place-items-center rounded-full text-4xl font-semibold text-primary-foreground"
-            style={{ background: "var(--gradient-primary)" }}
-          >
-            {"\n"}
+          <div className="mx-auto h-40 w-40 overflow-hidden rounded-full border-4 border-white/60 shadow-md">
+            <img
+              src={avatarAsset.url}
+              alt="Ảnh đại diện Nguyễn Bảo Thy"
+              className="h-full w-full object-cover"
+            />
           </div>
           <h3 className="mt-5 text-center text-xl font-semibold">Nguyễn Bảo Thy</h3>
           <p className="text-center text-sm text-muted-foreground">Sinh viên · Công nghệ số & AI</p>
