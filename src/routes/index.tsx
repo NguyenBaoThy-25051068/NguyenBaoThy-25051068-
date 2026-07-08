@@ -65,6 +65,31 @@ const projects = [
       "Một cấu trúc thư mục tốt tiết kiệm thời gian và tăng hiệu quả học tập lâu dài.",
     ],
     evidence: "Ảnh chụp màn hình cấu trúc thư mục môn học",
+    strengths: [
+      "Thực hiện đầy đủ tất cả các thao tác cơ bản với tệp tin.",
+      "Chụp màn hình chi tiết từng bước thực hiện làm minh chứng.",
+      "Tổ chức cấu trúc thư mục khoa học, dễ quản lý.",
+    ],
+    improvements: [
+      "Cần tìm hiểu thêm về các phím tắt để thao tác nhanh hơn.",
+      "Học cách sử dụng tính năng tìm kiếm nâng cao trong File Explorer.",
+    ],
+    lessons: [
+      "Quản lý tệp tin có tổ chức giúp tiết kiệm thời gian tìm kiếm.",
+      "Biết cách sử dụng Recycle Bin để khôi phục tệp tin đã xóa nhầm.",
+      "Shortcut giúp truy cập nhanh các thư mục thường dùng.",
+    ],
+    academicIntegrity: {
+      howUseAI: [
+        "Không sử dụng AI trong bài tập này.",
+        "Tự thực hành trực tiếp trên máy tính theo hướng dẫn của giảng viên.",
+      ],
+      commitments: [
+        "Tôi đã tự thực hiện tất cả các thao tác trên máy tính cá nhân.",
+        "Ảnh chụp màn hình là minh chứng thực tế từ quá trình thực hành.",
+        "Tất cả nội dung báo cáo được viết dựa trên trải nghiệm thực tế.",
+      ],
+    },
   },
   {
     id: "du-an-2",
