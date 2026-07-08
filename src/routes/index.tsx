@@ -555,7 +555,7 @@ function About() {
       <SectionHeader
         eyebrow="Giới thiệu"
         title="About Me"
-        desc="Đôi nét về người xây dựng Portfolio này và mục tiêu của hành trình học tập."
+        desc="Chào mừng bạn đến với portfolio của tôi - nơi tôi chia sẻ hành trình học tập và\u00a0\nphát triển kỹ năng số"
       />
       <div className="grid gap-6 md:grid-cols-[1fr_1.4fr]">
         {/* Card avatar */}
@@ -567,15 +567,15 @@ function About() {
             className="mx-auto grid h-40 w-40 place-items-center rounded-full text-4xl font-semibold text-primary-foreground"
             style={{ background: "var(--gradient-primary)" }}
           >
-            SV
+            {"\n"}
           </div>
-          <h3 className="mt-5 text-center text-xl font-semibold">[Điền tên của bạn]</h3>
+          <h3 className="mt-5 text-center text-xl font-semibold">Nguyễn Bảo Thy</h3>
           <p className="text-center text-sm text-muted-foreground">Sinh viên · Công nghệ số & AI</p>
 
           <ul className="mt-6 grid gap-2 text-sm">
-            <InfoRow icon={GraduationCap} label="Ngành học" value="[Điền ngành học]" />
+            <InfoRow icon={GraduationCap} label="Ngành học" value="Kinh Tế Quốc Tế" />
             <InfoRow icon={BookOpen} label="Trường / Lớp" value="[Điền trường / lớp]" />
-            <InfoRow icon={Mail} label="Liên hệ" value="student@example.edu.vn" />
+            <InfoRow icon={Mail} label="Liên hệ" value="25051068@vnu.edu.vn " />
           </ul>
         </div>
 
