@@ -219,37 +219,37 @@ const projects = [
         criterion: "Độ rõ ràng",
         v1: "Mơ hồ, chung chung",
         v2: "Rõ ràng, chi tiết",
-        note: "V2 nêu rõ mục tiêu và giới hạn.",
+        note: "Prompt nâng cao nêu rõ mục tiêu và giới hạn.",
       },
       {
         criterion: "Vai trò",
         v1: "Không có",
         v2: "Giảng viên môn CNS",
-        note: "V2 giúp AI xác định phong cách trả lời.",
+        note: "Prompt nâng cao\u00a0giúp AI xác định phong cách trả lời.",
       },
       {
         criterion: "Bối cảnh",
         v1: "Không nêu",
         v2: "Sinh viên năm nhất, chưa có nền tảng",
-        note: "V2 dẫn tới ngôn ngữ dễ hiểu hơn.",
+        note: "Prompt nâng cao\u00a0dẫn tới ngôn ngữ dễ hiểu hơn.",
       },
       {
         criterion: "Định dạng đầu ra",
         v1: "Tự do",
         v2: "3 mục, tối đa 200 chữ",
-        note: "V2 dễ trình bày và chấm điểm.",
+        note: "Prompt nâng cao\u00a0dễ trình bày và chấm điểm.",
       },
       {
         criterion: "Mức độ chính xác",
         v1: "Trung bình",
         v2: "Cao",
-        note: "V2 ít bị lan man khỏi chủ đề.",
+        note: "Prompt nâng cao\u00a0ít bị lan man khỏi chủ đề.",
       },
       {
         criterion: "Khả năng kiểm soát",
         v1: "Thấp",
         v2: "Cao",
-        note: "V2 dễ điều chỉnh lại theo mong muốn.",
+        note: "Prompt nâng cao\u00a0dễ điều chỉnh lại theo mong muốn.",
       },
     ],
     analysis: [
@@ -1120,14 +1120,14 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
 
         {/* Dự án 3: prompt v1 v2 + so sánh */}
         {p.promptV1 && (
-          <Block icon={MessageSquareCode} title="Prompt v1 (ban đầu)">
+          <Block icon={MessageSquareCode} title="Prompt cơ bản (ban đầu)">
             <div className="rounded-xl border border-border bg-muted/50 p-3 text-sm text-muted-foreground">
               “{p.promptV1}”
             </div>
           </Block>
         )}
         {p.promptV2 && (
-          <Block icon={MessageSquareCode} title="Prompt v2 (cải tiến)">
+          <Block icon={MessageSquareCode} title="Prompt nâng cao (cải tiến)">
             <div
               className="rounded-xl border border-primary/30 bg-primary/10 p-3 text-sm text-foreground"
               style={{ boxShadow: "var(--shadow-soft)" }}
@@ -1137,7 +1137,7 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
           </Block>
         )}
         {p.compare && (
-          <Block icon={Layers} title="Bảng so sánh Prompt v1 và v2" wide>
+          <Block icon={Layers} title="Bảng so sánh Prompt cơ bản và nâng cao" wide>
             <div className="overflow-x-auto">
               <table className="w-full min-w-[640px] border-collapse text-sm">
                 <thead>
