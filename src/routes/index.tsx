@@ -44,6 +44,9 @@ import {
   Palette,
   Wrench,
   Bot,
+  X,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -1054,6 +1057,24 @@ function Projects() {
 }
 
 function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number }) {
+  const [lightbox, setLightbox] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (lightbox === null) return;
+    const total = p.evidenceImages?.length ?? 0;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightbox(null);
+      if (e.key === "ArrowLeft") setLightbox((i) => (i === null || total === 0 ? null : i > 0 ? i - 1 : total - 1));
+      if (e.key === "ArrowRight") setLightbox((i) => (i === null || total === 0 ? null : (i + 1) % total));
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [lightbox, p.evidenceImages?.length]);
+
   return (
     <article
       id={p.id}
@@ -1440,7 +1461,11 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
             <div className="grid gap-3">
               <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
                 {p.evidenceImages.slice(0, 4).map((img, idx) => (
-                  <figure key={idx} className="overflow-hidden rounded-xl border border-border bg-background/60">
+                  <figure
+                    key={idx}
+                    onClick={() => setLightbox(idx)}
+                    className="cursor-pointer overflow-hidden rounded-xl border border-border bg-background/60 transition hover:opacity-90"
+                  >
                     <img
                       src={duan1Assets[img.src]?.url}
                       alt={img.caption}
@@ -1453,7 +1478,11 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
               </div>
               <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
                 {p.evidenceImages.slice(4).map((img, idx) => (
-                  <figure key={idx} className="overflow-hidden rounded-xl border border-border bg-background/60">
+                  <figure
+                    key={idx}
+                    onClick={() => setLightbox(idx + 4)}
+                    className="cursor-pointer overflow-hidden rounded-xl border border-border bg-background/60 transition hover:opacity-90"
+                  >
                     <img
                       src={duan1Assets[img.src]?.url}
                       alt={img.caption}
@@ -1484,6 +1513,47 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
             <EvidencePlaceholder text={p.evidence} />
           )}
         </Block>
+
+        {lightbox !== null && p.evidenceImages?.[lightbox] && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+            onClick={(e) => {
+              if (e.target === e.currentTarget) setLightbox(null);
+            }}
+          >
+            <button
+              onClick={() => setLightbox(null)}
+              className="absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full bg-white/10 text-white backdrop-blur transition hover:bg-white/20"
+              aria-label="Đóng"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            <button
+              onClick={() => setLightbox((lightbox - 1 + p.evidenceImages.length) % p.evidenceImages.length)}
+              className="absolute left-4 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white backdrop-blur transition hover:bg-white/20"
+              aria-label="Ảnh trước"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+            <button
+              onClick={() => setLightbox((lightbox + 1) % p.evidenceImages.length)}
+              className="absolute right-4 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white backdrop-blur transition hover:bg-white/20"
+              aria-label="Ảnh sau"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
+            <figure className="max-h-full max-w-full">
+              <img
+                src={duan1Assets[p.evidenceImages[lightbox].src]?.url}
+                alt={p.evidenceImages[lightbox].caption}
+                className="max-h-[80vh] max-w-full rounded-xl object-contain"
+              />
+              <figcaption className="mt-3 text-center text-sm text-white/80">
+                {p.evidenceImages[lightbox].caption}
+              </figcaption>
+            </figure>
+          </div>
+        )}
       </div>
     </article>
   );
