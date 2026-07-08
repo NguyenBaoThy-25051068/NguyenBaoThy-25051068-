@@ -211,7 +211,7 @@ const projects = [
     ],
     tools: ["ChatGPT", "Gemini", "Claude"],
     promptV1:
-      "Hãy tóm tắt bài học về prompt engineering giúp mình.",
+      "Tóm tắt nội dung bài học về Prompt Engineering.",
     promptV2:
       "Bạn đóng vai giảng viên môn Nhập môn Công nghệ số. Hãy tóm tắt bài học về Prompt Engineering dành cho sinh viên năm nhất chưa có nền tảng kỹ thuật. Yêu cầu: (1) tối đa 200 chữ, (2) chia thành 3 mục – khái niệm, cấu trúc prompt, ví dụ áp dụng, (3) dùng ngôn ngữ dễ hiểu, kèm 1 ví dụ minh họa, (4) kết thúc bằng 1 câu hỏi phản biện cho người học.",
     compare: [
