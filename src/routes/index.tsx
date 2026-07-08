@@ -597,7 +597,7 @@ function About() {
                 "Làm việc nhóm",
                 "Đọc sách",
                 "\n",
-                "Du lịch khám phá",
+                "Khám phá cách tìm kiếm và chọn lọc thông tin học thuật trên Internet",
               ].map((s) => (
                 <span
                   key={s}
