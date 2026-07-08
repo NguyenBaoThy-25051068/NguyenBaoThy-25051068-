@@ -484,6 +484,7 @@ const projects = [
       ],
     },
   },
+];
 
 /* ================= Placeholder minh chứng ================= */
 const evidence = [
