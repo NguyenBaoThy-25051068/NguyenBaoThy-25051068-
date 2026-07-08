@@ -556,7 +556,7 @@ function About() {
       <SectionHeader
         eyebrow="Giới thiệu"
         title="About Me"
-        desc="Chào mừng bạn đến với portfolio của tôi - nơi tôi chia sẻ hành trình học tập và\u00a0\nphát triển kỹ năng số"
+        desc={`Chào mừng bạn đến với portfolio của tôi - nơi tôi chia sẻ hành trình học tập và\u00a0\nphát triển kỹ năng số`}
       />
       <div className="grid gap-6 md:grid-cols-[1fr_1.4fr]">
         {/* Card avatar */}
@@ -597,7 +597,7 @@ function About() {
                 "Làm việc nhóm",
                 "Đọc sách",
                 "\n",
-                "Du lịch khám phá",
+                "Khám phá cách tìm kiếm và chọn lọc thông tin học thuật trên Internet",
               ].map((s) => (
                 <span
                   key={s}
@@ -1335,8 +1335,10 @@ function Footer() {
           <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
             Sinh viên
           </div>
-          <div className="mt-2 text-sm">[Điền họ tên sinh viên]</div>
-          <div className="text-sm text-muted-foreground">[Điền ngành / lớp]</div>
+          <div className="mt-2 text-sm">Nguyễn Bảo Thy</div>
+          <div className="text-sm text-muted-foreground whitespace-pre-line">
+            Khoa: Kinh Tế Quốc Tế{"\n"}Lớp: KTQT 6
+          </div>
         </div>
         <div>
           <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
@@ -1350,7 +1352,7 @@ function Footer() {
             Liên hệ
           </div>
           <div className="mt-2 flex items-center gap-2 text-sm">
-            <Mail className="h-4 w-4 text-primary" /> student@example.edu.vn
+            <Mail className="h-4 w-4 text-primary" /> 25051068@vnu.edu.vn
           </div>
           <div className="mt-1 text-sm text-muted-foreground">Có thể thay bằng email thật.</div>
         </div>
