@@ -306,10 +306,10 @@ const projects = [
     ],
     tools: ["Trello", "Notion", "Google Sheets", "Microsoft Planner"],
     team: [
-      { m: "Thành viên A", task: "Nghiên cứu tài liệu", due: "12/03", status: "Hoàn thành", note: "Đã tổng hợp 6 nguồn." },
-      { m: "Thành viên B", task: "Viết nội dung slide", due: "15/03", status: "Đang làm", note: "Cần bổ sung ví dụ." },
-      { m: "Thành viên C", task: "Thiết kế đồ họa", due: "18/03", status: "Chưa làm", note: "Chờ nội dung từ B." },
-      { m: "Thành viên D (mình)", task: "Điều phối & kiểm tra chất lượng", due: "20/03", status: "Đang làm", note: "Tổng hợp phản hồi." },
+      { m: "Thành viên A", task: "Nghiên cứu tài liệu", due: "12/03", status: "Hoàn Thành", note: "Đã tổng hợp 6 nguồn." },
+      { m: "Thành viên B", task: "Viết nội dung slide", due: "15/03", status: "Hoàn Thành", note: "Cần bổ sung\u00a0" },
+      { m: "Thành viên C", task: "Thiết kế đồ họa", due: "18/03", status: "Hoàn Thành", note: "Chờ nội dung từ B." },
+      { m: "Thành viên D (mình)", task: "Điều phối & kiểm tra chất lượng", due: "20/03", status: "Hoàn thành", note: "Tổng hợp phản hồi." },
     ],
     analysis: [
       "Công cụ trực tuyến giúp nhóm làm việc minh bạch và dễ theo dõi tiến độ.",
