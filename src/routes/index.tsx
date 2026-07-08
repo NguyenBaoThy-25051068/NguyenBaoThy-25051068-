@@ -1542,11 +1542,11 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
             >
               <ChevronRight className="h-6 w-6" />
             </button>
-            <div className="flex max-h-[85vh] w-fit max-w-[90vw] items-center justify-center rounded-2xl bg-background p-3 shadow-2xl">
+            <div className="flex max-h-[55vh] w-fit max-w-[90vw] items-start justify-center overflow-y-auto rounded-2xl bg-background p-3 shadow-2xl">
               <img
                 src={duan1Assets[p.evidenceImages[lightbox].src]?.url}
                 alt={p.evidenceImages[lightbox].caption}
-                className="block max-h-[75vh] max-w-full rounded-xl object-contain"
+                className="w-full rounded-xl object-contain"
               />
             </div>
             <div className="mt-4 max-w-[90vw] text-center text-sm text-white/90">
