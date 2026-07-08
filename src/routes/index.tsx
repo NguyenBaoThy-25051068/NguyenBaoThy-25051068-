@@ -459,7 +459,7 @@ function Hero() {
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-20 sm:py-28 md:grid-cols-[1.15fr_1fr] md:items-center">
         <div className="reveal">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/70 px-3 py-1 text-xs font-medium text-primary-foreground shadow-sm backdrop-blur">
-            <Heart className="h-3.5 w-3.5" /> Bài tập dự án cá nhân · Học kỳ 2026
+            <Heart className="h-3.5 w-3.5" /> Bài tập dự án cá nhân · Học kỳ II 2026
           </span>
           <h1 className="mt-5 text-4xl font-semibold leading-[1.1] sm:text-5xl md:text-6xl">
             <span className="text-gradient">Portfolio Kỹ thuật số</span>
