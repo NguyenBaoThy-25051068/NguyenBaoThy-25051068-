@@ -574,7 +574,8 @@ function About() {
 
           <ul className="mt-6 grid gap-2 text-sm">
             <InfoRow icon={GraduationCap} label="Ngành học" value="Kinh Tế Quốc Tế" />
-            <InfoRow icon={BookOpen} label="Trường / Lớp" value="[Điền trường / lớp]" />
+            <InfoRow icon={BookOpen} label="Trường" value="[Điền trường]" />
+            <InfoRow icon={BookOpen} label="Lớp" value="[Điền lớp]" />
             <InfoRow icon={Mail} label="Liên hệ" value="25051068@vnu.edu.vn " />
           </ul>
         </div>
@@ -592,6 +593,9 @@ function About() {
                 "Sáng tạo nội dung",
                 "Quản lý dữ liệu",
                 "Làm việc nhóm",
+                "Đọc sách",
+                "Chơi thể thao",
+                "Du lịch khám phá",
               ].map((s) => (
                 <span
                   key={s}
