@@ -42,13 +42,15 @@ const projects = [
     progress: 100,
     skills: ["Quản lý dữ liệu", "Công dân số", "Tổ chức thông tin"],
     objective:
-      "Biết tạo thư mục, lưu trữ tài liệu khoa học, đặt tên tệp nhất quán và quản lý dữ liệu học tập trong suốt học kỳ.",
+      "Mở và sử dụng File Explorer để quản lý tệp tin; tạo thư mục mới và tổ chức cấu trúc thư mục; thực hiện các thao tác sao chép, di chuyển, đổi tên và xóa tệp tin; tạo shortcut và quản lý tệp tin hiệu quả.",
     steps: [
-      "Tạo thư mục chính cho môn học “Nhập môn CNS & AI”.",
-      "Chia thành các thư mục con: Bài tập, Tài liệu tham khảo, Hình ảnh minh chứng, Sản phẩm cuối kỳ.",
-      "Đặt tên file theo quy tắc thống nhất: MonHoc_Chuong_BaiTap_NgayThucHien_PhienBan.",
-      "Ví dụ: NMCNS_Bai01_QuanLyTep_2026-03-12_v1.pdf.",
-      "Đồng bộ lên Google Drive để sao lưu và chia sẻ.",
+      "Mở File Explorer bằng tổ hợp phím Windows + E.",
+      "Truy cập ổ đĩa D: và tạo thư mục mới 'Tài liệu học tập'.",
+      "Tạo các thư mục con: Bài tập, Slide bài giảng, Tài liệu tham khảo.",
+      "Tạo file Word 'Ghi chú.docx' trong thư mục Bài tập.",
+      "Thực hành sao chép, di chuyển, đổi tên tệp tin.",
+      "Tạo shortcut cho thư mục thường dùng ra Desktop.",
+      "Xóa các tệp tin không cần thiết (di chuyển vào Recycle Bin).",
     ],
     tools: ["File Explorer", "Google Drive", "OneDrive"],
     analysis: [
