@@ -1,6 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import avatarAsset from "@/assets/avatar.jpg.asset.json";
+import duan1_15 from "@/assets/duan1-15.png.asset.json";
+import duan1_16 from "@/assets/duan1-16.png.asset.json";
+import duan1_17 from "@/assets/duan1-17.png.asset.json";
+import duan1_18 from "@/assets/duan1-18.png.asset.json";
+import duan1_19 from "@/assets/duan1-19.png.asset.json";
+import duan1_20 from "@/assets/duan1-20.png.asset.json";
+import duan1_21 from "@/assets/duan1-21.png.asset.json";
+
+const duan1Assets: Record<string, { url: string }> = {
+  "duan1-15": duan1_15,
+  "duan1-16": duan1_16,
+  "duan1-17": duan1_17,
+  "duan1-18": duan1_18,
+  "duan1-19": duan1_19,
+  "duan1-20": duan1_20,
+  "duan1-21": duan1_21,
+};
 import {
   FolderTree,
   Search,
@@ -65,6 +82,15 @@ const projects = [
       "Một cấu trúc thư mục tốt tiết kiệm thời gian và tăng hiệu quả học tập lâu dài.",
     ],
     evidence: "Ảnh chụp màn hình cấu trúc thư mục môn học",
+    evidenceImages: [
+      { src: "duan1-15", caption: "Thanh Taskbar và tìm kiếm trên Windows" },
+      { src: "duan1-16", caption: "Cửa sổ File Explorer – PC này" },
+      { src: "duan1-17", caption: "Tạo file GhiChu.txt" },
+      { src: "duan1-18", caption: "Đổi tên file thành GhiChuQuanTrong.txt" },
+      { src: "duan1-19", caption: "Tạo thư mục TaiLieu" },
+      { src: "duan1-20", caption: "Menu chuột phải – Sao chép tệp tin" },
+      { src: "duan1-21", caption: "Di chuyển file vào thư mục TaiLieu" },
+    ],
     strengths: [
       "Thực hiện đầy đủ tất cả các thao tác cơ bản với tệp tin.",
       "Chụp màn hình chi tiết từng bước thực hiện làm minh chứng.",
@@ -1355,7 +1381,23 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
         )}
 
         <Block icon={ImageIcon} title="Minh chứng">
-          <EvidencePlaceholder text={p.evidence} />
+          {p.evidenceImages && p.evidenceImages.length > 0 ? (
+            <div className="grid gap-3 sm:grid-cols-2">
+              {p.evidenceImages.map((img, idx) => (
+                <figure key={idx} className="overflow-hidden rounded-xl border border-border bg-background/60">
+                  <img
+                    src={duan1Assets[img.src]?.url}
+                    alt={img.caption}
+                    loading="lazy"
+                    className="h-40 w-full object-cover"
+                  />
+                  <figcaption className="px-3 py-2 text-xs text-muted-foreground">{img.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          ) : (
+            <EvidencePlaceholder text={p.evidence} />
+          )}
         </Block>
       </div>
     </article>
