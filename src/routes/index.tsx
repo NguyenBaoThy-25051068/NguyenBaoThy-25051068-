@@ -1435,20 +1435,35 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
           </Block>
         )}
 
-        <Block icon={ImageIcon} title="Minh chứng">
+        <Block icon={ImageIcon} title="Minh chứng" wide>
           {p.evidenceImages && p.evidenceImages.length > 0 ? (
-            <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-              {p.evidenceImages.map((img, idx) => (
-                <figure key={idx} className="overflow-hidden rounded-xl border border-border bg-background/60">
-                  <img
-                    src={duan1Assets[img.src]?.url}
-                    alt={img.caption}
-                    loading="lazy"
-                    className="h-32 w-full object-cover"
-                  />
-                  <figcaption className="px-3 py-2 text-xs text-muted-foreground">{img.caption}</figcaption>
-                </figure>
-              ))}
+            <div className="grid gap-3">
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                {p.evidenceImages.slice(0, 4).map((img, idx) => (
+                  <figure key={idx} className="overflow-hidden rounded-xl border border-border bg-background/60">
+                    <img
+                      src={duan1Assets[img.src]?.url}
+                      alt={img.caption}
+                      loading="lazy"
+                      className="h-32 w-full object-cover"
+                    />
+                    <figcaption className="px-3 py-2 text-xs text-muted-foreground">{img.caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                {p.evidenceImages.slice(4).map((img, idx) => (
+                  <figure key={idx} className="overflow-hidden rounded-xl border border-border bg-background/60">
+                    <img
+                      src={duan1Assets[img.src]?.url}
+                      alt={img.caption}
+                      loading="lazy"
+                      className="h-32 w-full object-cover"
+                    />
+                    <figcaption className="px-3 py-2 text-xs text-muted-foreground">{img.caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
             </div>
           ) : p.evidenceFile ? (
             <div className="space-y-3">
