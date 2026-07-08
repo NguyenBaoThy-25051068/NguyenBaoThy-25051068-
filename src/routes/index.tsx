@@ -1513,6 +1513,47 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
             <EvidencePlaceholder text={p.evidence} />
           )}
         </Block>
+
+        {lightbox !== null && p.evidenceImages?.[lightbox] && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+            onClick={(e) => {
+              if (e.target === e.currentTarget) setLightbox(null);
+            }}
+          >
+            <button
+              onClick={() => setLightbox(null)}
+              className="absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full bg-white/10 text-white backdrop-blur transition hover:bg-white/20"
+              aria-label="Đóng"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            <button
+              onClick={() => setLightbox((lightbox - 1 + p.evidenceImages.length) % p.evidenceImages.length)}
+              className="absolute left-4 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white backdrop-blur transition hover:bg-white/20"
+              aria-label="Ảnh trước"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+            <button
+              onClick={() => setLightbox((lightbox + 1) % p.evidenceImages.length)}
+              className="absolute right-4 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white backdrop-blur transition hover:bg-white/20"
+              aria-label="Ảnh sau"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
+            <figure className="max-h-full max-w-full">
+              <img
+                src={duan1Assets[p.evidenceImages[lightbox].src]?.url}
+                alt={p.evidenceImages[lightbox].caption}
+                className="max-h-[80vh] max-w-full rounded-xl object-contain"
+              />
+              <figcaption className="mt-3 text-center text-sm text-white/80">
+                {p.evidenceImages[lightbox].caption}
+              </figcaption>
+            </figure>
+          </div>
+        )}
       </div>
     </article>
   );
