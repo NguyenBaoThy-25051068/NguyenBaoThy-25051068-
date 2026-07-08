@@ -1335,8 +1335,10 @@ function Footer() {
           <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
             Sinh viên
           </div>
-          <div className="mt-2 text-sm">[Điền họ tên sinh viên]</div>
-          <div className="text-sm text-muted-foreground">[Điền ngành / lớp]</div>
+          <div className="mt-2 text-sm">Nguyễn Bảo Thy</div>
+          <div className="text-sm text-muted-foreground whitespace-pre-line">
+            Khoa: Kinh Tế Quốc Tế{"\n"}Lớp: KTQT 6
+          </div>
         </div>
         <div>
           <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
