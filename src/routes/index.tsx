@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import avatarAsset from "@/assets/avatar.jpg.asset.json";
+import duan2Baocao from "@/assets/duan2-baocao.docx.asset.json";
 import duan1_15 from "@/assets/duan1-15.png.asset.json";
 import duan1_16 from "@/assets/duan1-16.png.asset.json";
 import duan1_17 from "@/assets/duan1-17.png.asset.json";
@@ -121,102 +122,156 @@ const projects = [
     id: "du-an-2",
     tag: "Bài tập 2 · Mục 2.4",
     icon: Search,
-    title: "Tìm kiếm và đánh giá thông tin học thuật",
+    title: "Tìm kiếm và đánh giá thông tin học thuật – Hiệu ứng chim mồi (Decoy Effect)",
     progress: 100,
     skills: ["Tìm kiếm nâng cao", "Đánh giá nguồn", "Tư duy phản biện"],
     summary:
-      "Bài tập này giúp tôi phân tích tác động của trí tuệ nhân tạo (AI) đối với giáo dục đại học thông qua việc tìm kiếm và đánh giá thông tin học thuật từ các nguồn đáng tin cậy.",
+      "Bài tập này giúp tôi tìm kiếm, tổng hợp và đánh giá các nguồn thông tin học thuật liên quan đến hiệu ứng chim mồi (Decoy Effect) – một hiện tượng nổi bật trong kinh tế học hành vi, marketing và quá trình ra quyết định của người tiêu dùng.",
     objective:
-      "Phân tích tác động của AI đối với giáo dục đại học; tìm kiếm thông tin từ các nguồn học thuật đáng tin cậy; đánh giá độ tin cậy của 12 tài liệu theo 4 tiêu chí chuẩn; tổng hợp và phân loại nguồn thông tin một cách có hệ thống.",
+      "Tìm hiểu hiệu ứng chim mồi (Decoy Effect / Attraction Effect) trong hành vi tiêu dùng; tìm kiếm thông tin từ các cơ sở dữ liệu học thuật uy tín; đánh giá 10 tài liệu (7 bài báo khoa học + 3 sách chuyên khảo) theo 5 tiêu chí: tác giả, cơ quan xuất bản, phương pháp nghiên cứu, mức độ trích dẫn và tính cập nhật.",
     steps: [
-      "Xác định chủ đề nghiên cứu: Tác động của AI trong giáo dục đại học.",
-      "Thiết lập từ khóa tìm kiếm: 'AI in higher education', 'Artificial Intelligence and pedagogy', 'AI adoption in universities'.",
-      "Tìm kiếm trên các cơ sở dữ liệu: Google Scholar, Microsoft Academic, Springer, Elsevier.",
-      "Thu thập 12 tài liệu: 7 bài báo khoa học, 2 sách chuyên khảo, 3 nguồn mở.",
-      "Đánh giá từng nguồn theo 4 tiêu chí: Tác giả, Cơ quan xuất bản, Phương pháp nghiên cứu, Trích dẫn và Tính cập nhật.",
-      "Lập bảng tổng hợp đánh giá và phân loại độ tin cậy.",
-      "Viết báo cáo tổng hợp kết quả nghiên cứu.",
+      "Xác định chủ đề: Hiệu ứng chim mồi (Decoy Effect) trong hành vi tiêu dùng.",
+      "Thiết lập từ khóa: 'Decoy Effect', 'Attraction Effect', 'Asymmetric Dominance Effect', 'Consumer Choice', 'Behavioral Economics', 'Consumer Decision Making'.",
+      "Tìm kiếm trên các cơ sở dữ liệu: Google Scholar, ScienceDirect, Wiley Online Library, Oxford Academic, thư viện số trường đại học.",
+      "Tra cứu trên các tạp chí chuyên ngành: Journal of Consumer Research, Journal of Marketing Research.",
+      "Thu thập 10 tài liệu: 7 bài báo khoa học và 3 sách chuyên khảo nền tảng (Predictably Irrational, Thinking Fast and Slow, Nudge).",
+      "Đánh giá từng nguồn theo 5 tiêu chí: Tác giả, Cơ quan xuất bản, Phương pháp nghiên cứu, Mức độ trích dẫn, Tính cập nhật.",
+      "Lập bảng tổng hợp và chấm độ tin cậy theo thang 5/5.",
+      "Viết báo cáo tổng hợp và danh mục tài liệu tham khảo theo chuẩn Harvard.",
     ],
-    tools: ["Google Scholar", "Microsoft Academic", "Springer", "Elsevier", "Tạp chí Quản lý Nhà nước", "Tạp chí Công thương"],
+    tools: ["Google Scholar", "ScienceDirect", "Wiley Online Library", "Oxford Academic", "Journal of Consumer Research", "Journal of Marketing Research"],
     operators: [
-      { op: "site:", ex: 'site:edu.vn "trí tuệ nhân tạo"' },
-      { op: "filetype:", ex: "filetype:pdf ứng dụng AI trong giáo dục" },
-      { op: "intitle:", ex: 'intitle:"prompt engineering" education' },
-      { op: '"..."', ex: '"generative AI in learning"' },
-      { op: "OR", ex: "ChatGPT OR Gemini classroom" },
-      { op: "-", ex: "AI education -marketing" },
-      { op: "after:", ex: "AI ethics after:2023" },
+      { op: '"..."', ex: '"decoy effect" consumer' },
+      { op: "AND", ex: "decoy effect AND consumer choice" },
+      { op: "OR", ex: '"attraction effect" OR "asymmetric dominance"' },
+      { op: "site:", ex: "site:sciencedirect.com decoy effect" },
+      { op: "filetype:", ex: "filetype:pdf attraction effect consumer" },
+      { op: "intitle:", ex: 'intitle:"decoy effect"' },
+      { op: "after:", ex: "attraction effect after:2014" },
     ],
     sources: [
       {
-        name: "Báo cáo UNESCO 2023",
-        author: "UNESCO",
-        year: "2023",
-        trust: "Cao",
-        why: "Tổ chức quốc tế, có phản biện học thuật.",
-        limit: "Phạm vi toàn cầu, ít số liệu Việt Nam.",
+        name: "Huber, Payne & Puto (1982) – Adding Asymmetrically Dominated Alternatives",
+        author: "Huber, Payne & Puto",
+        year: "1982",
+        trust: "Rất cao (5/5)",
+        why: "Nghiên cứu nền tảng về Decoy Effect, đăng trên Journal of Consumer Research, phương pháp thực nghiệm, được trích dẫn rất rộng.",
+        limit: "Xuất bản đã lâu, cần đối chiếu với các nghiên cứu cập nhật.",
       },
       {
-        name: "Bài báo trên Scholar",
-        author: "Nguyễn V.A và cộng sự",
-        year: "2024",
-        trust: "Cao",
-        why: "Có DOI, tạp chí uy tín, trích dẫn rõ.",
-        limit: "Chuyên sâu, đòi hỏi nền tảng đọc học thuật.",
+        name: "Huber & Puto (1983) – Market Boundaries and Product Choice",
+        author: "Huber & Puto",
+        year: "1983",
+        trust: "Rất cao (5/5)",
+        why: "Mở rộng nghiên cứu về hiệu ứng hấp dẫn và thay thế trong lựa chọn sản phẩm; tạp chí phản biện uy tín.",
+        limit: "Bối cảnh thị trường cũ, một số ví dụ đã lạc hậu.",
       },
       {
-        name: "Trang web trường đại học",
-        author: "ĐH Bách Khoa",
-        year: "2024",
-        trust: "Khá",
-        why: "Nguồn chính thức của cơ sở giáo dục.",
-        limit: "Chủ yếu góc nhìn của một trường.",
+        name: "Simonson (1989) – Choice Based on Reasons",
+        author: "Simonson",
+        year: "1989",
+        trust: "Rất cao (5/5)",
+        why: "Giải thích lựa chọn dựa trên lý do và hiệu ứng hấp dẫn; tác giả uy tín trong marketing; trích dẫn cao.",
+        limit: "Tập trung vào bối cảnh thí nghiệm.",
       },
       {
-        name: "Blog côngng nghệ",
-        author: "Không rõ tác giả",
-        year: "2025",
-        trust: "Thấp",
-        why: "Cập nhật xu hướng nhanh.",
-        limit: "Không kiểm duyệt học thuật, dễ chủ quan.",
+        name: "Herne (1997) – Decoy Alternatives in Policy Choices",
+        author: "Herne",
+        year: "1997",
+        trust: "Cao (4/5)",
+        why: "Ứng dụng Decoy Effect ngoài marketing – trong lựa chọn chính sách; bổ sung góc nhìn mới.",
+        limit: "Mẫu khảo sát hạn chế; bối cảnh chính trị châu Âu.",
+      },
+      {
+        name: "Hedgcock & Rao (2009) – Trade-off Aversion",
+        author: "Hedgcock & Rao",
+        year: "2009",
+        trust: "Cao (4/5)",
+        why: "Giải thích cơ chế tâm lý (tránh đánh đổi) đứng sau hiệu ứng chim mồi; phương pháp thực nghiệm.",
+        limit: "Cỡ mẫu vừa phải, cần thêm nghiên cứu lặp lại.",
+      },
+      {
+        name: "Huber, Payne & Puto (2014) – Let's Be Honest About the Attraction Effect",
+        author: "Huber, Payne & Puto",
+        year: "2014",
+        trust: "Rất cao (5/5)",
+        why: "Đánh giá lại Attraction Effect sau hơn 30 năm; nguồn uy tín, cập nhật.",
+        limit: "Chủ yếu nhìn lại lý thuyết, ít dữ liệu mới.",
+      },
+      {
+        name: "Trueblood, Brown & Heathcote (2014) – Multiattribute LBA Model",
+        author: "Trueblood, Brown & Heathcote",
+        year: "2014",
+        trust: "Cao (4/5)",
+        why: "Mô hình toán học hiện đại hoá quá trình quyết định đa lựa chọn.",
+        limit: "Yêu cầu nền tảng thống kê/mô hình hoá để đọc hiểu.",
+      },
+      {
+        name: "Ariely (2008) – Predictably Irrational",
+        author: "Dan Ariely",
+        year: "2008",
+        trust: "Rất cao (5/5)",
+        why: "Sách chuyên khảo nổi tiếng về sai lệch trong quyết định tiêu dùng, dựa trên nhiều thực nghiệm.",
+        limit: "Ngôn ngữ phổ thông, cần bổ sung nguồn học thuật gốc.",
+      },
+      {
+        name: "Kahneman (2011) – Thinking, Fast and Slow",
+        author: "Daniel Kahneman",
+        year: "2011",
+        trust: "Rất cao (5/5)",
+        why: "Tác giả đoạt Nobel Kinh tế; tài liệu nền tảng về kinh tế học hành vi và thiên kiến nhận thức.",
+        limit: "Bao quát rộng, phần Decoy Effect chỉ là một chủ đề nhỏ.",
+      },
+      {
+        name: "Thaler & Sunstein (2008) – Nudge",
+        author: "Thaler & Sunstein",
+        year: "2008",
+        trust: "Rất cao (5/5)",
+        why: "Kiến trúc lựa chọn và ảnh hưởng đến hành vi; ứng dụng trong marketing và chính sách công.",
+        limit: "Ví dụ chủ yếu từ bối cảnh Hoa Kỳ.",
       },
     ],
     analysis: [
-      "Tìm kiếm hiệu quả không chỉ là gõ từ khóa – cần chiến lược kết hợp toán tử để thu hẹp phạm vi.",
-      "Các nguồn học thuật (UNESCO, tạp chí có DOI) có giá trị hơn blog cá nhân do có quy trình phản biện.",
-      "Luôn đối chiếu ít nhất 2–3 nguồn để giảm rủi ro thông tin sai lệch.",
+      "Tìm kiếm hiệu quả cần kết hợp nhiều toán tử ('...', AND, OR, site:, filetype:, after:) để thu hẹp phạm vi và tăng độ chính xác.",
+      "Các bài báo trên Journal of Consumer Research, Journal of Marketing Research có phản biện nghiêm ngặt nên độ tin cậy cao hơn nguồn phổ thông.",
+      "Nghiên cứu nền tảng (Huber–Payne–Puto 1982, Simonson 1989) tuy cũ nhưng vẫn có giá trị vì được trích dẫn rộng và là cơ sở cho các nghiên cứu về sau.",
+      "Sách chuyên khảo của Ariely, Kahneman, Thaler & Sunstein giúp đặt Decoy Effect trong bức tranh lớn của kinh tế học hành vi.",
     ],
     lesson: [
-      "Cần kiểm chứng thông tin trước khi sử dụng.",
-      "Không nên phụ thuộc vào một nguồn duy nhất, đặc biệt khi nguồn thiếu tác giả rõ ràng.",
+      "Đánh giá nguồn theo 5 tiêu chí giúp loại bỏ tài liệu thiếu căn cứ và nâng cao chất lượng nghiên cứu.",
+      "Cần kết hợp cả nguồn nền tảng (kinh điển) và nguồn cập nhật để có góc nhìn đầy đủ.",
     ],
-    evidence: "Ảnh kết quả tìm kiếm nâng cao + bảng đánh giá nguồn",
+    evidence: "Báo cáo Word: 'Tìm kiếm và đánh giá thông tin học thuật – Hiệu ứng chim mồi (Decoy Effect)'",
+    evidenceFile: {
+      name: "BaoCao_DecoyEffect.docx",
+      label: "Tải báo cáo Word (Decoy Effect)",
+    },
     strengths: [
-      "Thu thập được 12 tài liệu đa dạng: bài báo khoa học, sách chuyên khảo, nguồn mở.",
-      "Đánh giá có hệ thống theo 4 tiêu chí: Tác giả, Cơ quan xuất bản, Phương pháp, Trích dẫn.",
-      "Phân loại rõ ràng độ tin cậy: Rất cao, Cao, Trung bình, Thấp.",
-      "Xác định được nguồn không đáng tin (blog cá nhân) và lý do tại sao.",
+      "Thu thập được 10 tài liệu đa dạng: 7 bài báo khoa học + 3 sách chuyên khảo nổi tiếng.",
+      "Đánh giá có hệ thống theo 5 tiêu chí: Tác giả, Cơ quan xuất bản, Phương pháp, Trích dẫn, Tính cập nhật.",
+      "Chấm độ tin cậy rõ ràng theo thang 5/5 và giải thích lý do cho từng tài liệu.",
+      "Trình bày danh mục tham khảo đúng chuẩn Harvard.",
     ],
     improvements: [
-      "Cần mở rộng tìm kiếm trên nhiều cơ sở dữ liệu quốc tế hơn.",
-      "Nên bổ sung thêm các nghiên cứu thực nghiệm tại Việt Nam.",
+      "Bổ sung thêm nghiên cứu thực nghiệm về Decoy Effect trong bối cảnh Việt Nam / Đông Nam Á.",
+      "Đối chiếu thêm các nghiên cứu phản biện (khi nào Decoy Effect KHÔNG xảy ra) để tăng tính khách quan.",
     ],
     lessons: [
-      "Không phải mọi thông tin trên mạng đều đáng tin cậy - cần kiểm tra nguồn gốc.",
-      "Các tạp chí khoa học và báo cáo từ tổ chức uy tín (OECD, UNESCO) có độ tin cậy cao.",
-      "Blog cá nhân và nguồn không rõ tác giả cần được xác minh kỹ lưỡng.",
-      "Tính cập nhật của tài liệu rất quan trọng với chủ đề AI vì công nghệ thay đổi nhanh.",
+      "Không phải mọi thông tin trên mạng đều đáng tin cậy – cần kiểm tra tác giả và cơ quan xuất bản.",
+      "Các tạp chí khoa học có phản biện (JCR, JMR) đáng tin cậy hơn blog cá nhân hoặc trang tin thương mại.",
+      "Nguồn kinh điển dù cũ vẫn giá trị nếu được cộng đồng học thuật trích dẫn rộng.",
+      "Chuẩn trích dẫn Harvard giúp báo cáo minh bạch và có thể kiểm chứng.",
     ],
     academicIntegrity: {
       howUseAI: [
-        "Sử dụng AI để gợi ý từ khóa tìm kiếm phù hợp với chủ đề.",
-        "Dùng AI để tóm tắt nội dung chính của các bài báo dài.",
+        "Sử dụng AI để gợi ý từ khóa tìm kiếm và các toán tử phù hợp với chủ đề Decoy Effect.",
+        "Dùng AI để tóm tắt nhanh nội dung chính của các bài báo dài trước khi đọc toàn văn.",
       ],
       commitments: [
-        "Tôi đã tự tìm kiếm và chọn lọc 12 nguồn thông tin từ các cơ sở dữ liệu học thuật.",
-        "Việc đánh giá độ tin cậy được thực hiện bởi tôi dựa trên 4 tiêu chí đã học.",
-        "AI chỉ hỗ trợ tóm tắt, không thay thế việc đọc hiểu và phân tích.",
-        "Tất cả trích dẫn được kiểm tra và ghi nguồn đầy đủ.",
+        "Tôi đã tự tìm kiếm và chọn lọc 10 nguồn thông tin từ các cơ sở dữ liệu học thuật.",
+        "Việc chấm điểm độ tin cậy theo 5 tiêu chí do tôi thực hiện sau khi đọc từng tài liệu.",
+        "AI chỉ hỗ trợ tóm tắt và gợi ý từ khóa, không thay thế việc phân tích và trích dẫn.",
+        "Tất cả tài liệu được ghi nguồn đầy đủ theo chuẩn Harvard trong báo cáo.",
       ],
     },
   },
@@ -1394,6 +1449,21 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
                   <figcaption className="px-3 py-2 text-xs text-muted-foreground">{img.caption}</figcaption>
                 </figure>
               ))}
+            </div>
+          ) : p.evidenceFile ? (
+            <div className="space-y-3">
+              <EvidencePlaceholder text={p.evidence} />
+              <a
+                href={duan2Baocao.url}
+                download={p.evidenceFile.name}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-medium text-foreground transition hover:bg-primary/20"
+              >
+                <BookOpen className="h-4 w-4 text-primary" />
+                {p.evidenceFile.label}
+                <span className="text-xs text-muted-foreground">({p.evidenceFile.name})</span>
+              </a>
             </div>
           ) : (
             <EvidencePlaceholder text={p.evidence} />
