@@ -24,6 +24,8 @@ import {
   Cpu,
   Database,
   Palette,
+  Wrench,
+  Bot,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
