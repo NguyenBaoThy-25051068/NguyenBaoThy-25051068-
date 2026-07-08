@@ -306,10 +306,36 @@ const projects = [
     ],
     tools: ["Trello", "Notion", "Google Sheets", "Microsoft Planner"],
     team: [
-      { m: "Thành viên A", task: "Nghiên cứu tài liệu", due: "12/03", status: "Hoàn Thành", note: "Đã tổng hợp 6 nguồn." },
-      { m: "Thành viên B", task: "Viết nội dung slide", due: "15/03", status: "Hoàn Thành", note: "Cần bổ sung\u00a0" },
-      { m: "Thành viên C", task: "Thiết kế đồ họa", due: "18/03", status: "Hoàn Thành", note: "Chờ nội dung từ B." },
-      { m: "Thành viên D (mình)", task: "Điều phối & kiểm tra chất lượng", due: "20/03", status: "Hoàn thành", note: "Tổng hợp phản hồi." },
+      {
+        m: "Mô tả cách sử dụng AI cùng các prompt",
+        task: "1. Giới thiệu AI và Prompt\n2. Cách sử dụng AI hiệu quả\n3. Các loại prompt phổ biến",
+        who: "Vũ Hà Trang",
+        due: "20/4/2026",
+      },
+      {
+        m: "Tìm 1 ứng dụng của AI và công nghệ số trong lĩnh vực Luật",
+        task: "1. Giới thiệu về AI pháp luật\n2. AI pháp luật là gì\n3. Đặc điểm của AI pháp luật\n4. Cách sử dụng AI pháp luật\n5. Hướng dẫn cách đặt câu hỏi",
+        who: "Nguyễn Bảo Thy",
+        due: "20/4/2026",
+      },
+      {
+        m: "Tìm 1 ứng dụng của AI và công nghệ số trong lĩnh vực kinh tế",
+        task: "1. Giới thiệu về Misa\n2. Tổng quát về Misa Ava\n3. Cơ chế vận hành và tương tác với AI Misa Ava",
+        who: "Nguyễn Thành Trung",
+        due: "20/4/2026",
+      },
+      {
+        m: "Tìm hiểu nội dung về lợi ích và thách thức của các ứng dụng",
+        task: "1. Lợi ích và thách thức của Misa\n2. Lợi ích và thách thức của AI pháp luật",
+        who: "Phan Diệp Thuý",
+        due: "20/4/2026",
+      },
+      {
+        m: "Tìm hiểu nội dung về kết luận và định hướng sử dụng AI và công nghệ số trong tương lai",
+        task: "1. Thực trạng của AI\n2. Định hướng AI và công nghệ số trong tương lai",
+        who: "Lương Thị Thu Trang",
+        due: "20/4/2026",
+      },
     ],
     analysis: [
       "Công cụ trực tuyến giúp nhóm làm việc minh bạch và dễ theo dõi tiến độ.",
@@ -1088,33 +1114,19 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
               <table className="w-full min-w-[640px] border-collapse text-sm">
                 <thead>
                   <tr className="bg-muted/60 text-left text-xs uppercase tracking-wide text-muted-foreground">
-                    <th className="p-2">Thành viên</th>
-                    <th className="p-2">Nhiệm vụ</th>
-                    <th className="p-2">Hạn</th>
-                    <th className="p-2">Trạng thái</th>
-                    <th className="p-2">Ghi chú</th>
+                    <th className="p-2">Tên công việc</th>
+                    <th className="p-2">Mô tả công việc</th>
+                    <th className="p-2">Người thực hiện</th>
+                    <th className="p-2">Thời hạn hoàn thành</th>
                   </tr>
                 </thead>
                 <tbody>
                   {p.team.map((t) => (
                     <tr key={t.m} className="border-t border-border align-top">
                       <td className="p-2 font-medium">{t.m}</td>
-                      <td className="p-2 text-muted-foreground">{t.task}</td>
+                      <td className="p-2 whitespace-pre-line text-muted-foreground">{t.task}</td>
+                      <td className="p-2 text-muted-foreground">{t.who}</td>
                       <td className="p-2 text-muted-foreground">{t.due}</td>
-                      <td className="p-2">
-                        <span
-                          className={`rounded-full px-2 py-0.5 text-xs font-semibold ${
-                            t.status === "Hoàn thành"
-                              ? "bg-secondary text-secondary-foreground"
-                              : t.status === "Đang làm"
-                                ? "bg-accent text-accent-foreground"
-                                : "bg-primary/30 text-foreground"
-                          }`}
-                        >
-                          {t.status}
-                        </span>
-                      </td>
-                      <td className="p-2 text-muted-foreground">{t.note}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -1122,6 +1134,7 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
             </div>
           </Block>
         )}
+
 
         {/* Dự án 5: vai trò AI vs con người */}
         {p.roles && (
