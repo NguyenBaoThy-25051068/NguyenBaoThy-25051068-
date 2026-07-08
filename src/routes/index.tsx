@@ -1516,7 +1516,7 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
 
         {lightbox !== null && p.evidenceImages?.[lightbox] && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-6"
             onClick={(e) => {
               if (e.target === e.currentTarget) setLightbox(null);
             }}
@@ -1542,13 +1542,13 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
             >
               <ChevronRight className="h-6 w-6" />
             </button>
-            <figure className="max-h-full max-w-full">
+            <figure className="max-h-[80vh] max-w-4xl overflow-hidden rounded-2xl bg-background p-3 shadow-2xl">
               <img
                 src={duan1Assets[p.evidenceImages[lightbox].src]?.url}
                 alt={p.evidenceImages[lightbox].caption}
-                className="max-h-[80vh] max-w-full rounded-xl object-contain"
+                className="max-h-[60vh] w-full rounded-xl object-contain"
               />
-              <figcaption className="mt-3 text-center text-sm text-white/80">
+              <figcaption className="mt-3 text-center text-sm text-muted-foreground">
                 {p.evidenceImages[lightbox].caption}
               </figcaption>
             </figure>
