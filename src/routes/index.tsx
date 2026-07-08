@@ -1625,7 +1625,7 @@ function Footer() {
           <div className="mt-2 flex items-center gap-2 text-sm">
             <Mail className="h-4 w-4 text-primary" /> 25051068@vnu.edu.vn
           </div>
-          <div className="mt-1 text-sm text-muted-foreground">Có thể thay bằng email thật.</div>
+          <div className="mt-1 text-sm text-muted-foreground">{"\n"}</div>
         </div>
       </div>
       <div className="border-t border-border">
