@@ -680,56 +680,72 @@ function Overview() {
           title="Hành trình 6 nhiệm vụ học tập"
           desc="Sáu bài tập tính điểm cuối kỳ được kết nối thành một hành trình phát triển năng lực số và AI có trách nhiệm."
         />
-        <div className="relative grid gap-6">
+        <div className="relative">
+          {/* Vertical timeline line */}
           <div className="absolute left-6 top-2 bottom-2 hidden w-px bg-gradient-to-b from-primary via-secondary to-accent md:left-1/2 md:block" />
+
           {projects.map((p, i) => (
             <div
               key={p.id}
-              className={`reveal relative grid gap-4 md:grid-cols-2 md:items-center ${
-                i % 2 === 1 ? "md:[&>a]:md:col-start-2" : ""
+              className={`reveal relative mb-10 grid gap-6 md:grid-cols-2 md:items-center ${
+                i % 2 === 1 ? "md:grid-flow-dense" : ""
               }`}
             >
+              {/* Timeline dot */}
               <div
-                className={`hidden md:block ${i % 2 === 1 ? "md:order-2" : ""}`}
+                className={`absolute left-6 top-6 z-10 grid h-8 w-8 place-items-center rounded-full border-4 border-background text-xs font-semibold text-primary-foreground md:left-1/2 md:-translate-x-1/2 ${
+                  i % 2 === 0 ? "bg-primary" : "bg-secondary"
+                }`}
+              >
+                {i + 1}
+              </div>
+
+              {/* Content card */}
+              <div className={i % 2 === 1 ? "md:col-start-2" : ""}>
+                <a
+                  href={`#${p.id}`}
+                  className="card-hover group relative block rounded-3xl border border-border bg-card p-5"
+                >
+                  <div className="flex items-center gap-3">
+                    <span
+                      className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl text-primary-foreground"
+                      style={{ background: "var(--gradient-primary)" }}
+                    >
+                      <p.icon className="h-5 w-5" />
+                    </span>
+                    <div className="min-w-0">
+                      <div className="text-xs font-medium text-muted-foreground">
+                        Nhiệm vụ {i + 1} · {p.tag}
+                      </div>
+                      <h3 className="truncate text-base font-semibold">{p.title}</h3>
+                    </div>
+                  </div>
+                  <p className="mt-3 line-clamp-2 text-sm text-muted-foreground">{p.objective}</p>
+                  <div className="mt-4 flex items-center justify-between text-xs">
+                    <span className="text-muted-foreground">Tiến độ hoàn thành</span>
+                    <span className="font-medium">{p.progress}%</span>
+                  </div>
+                  <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-muted">
+                    <div
+                      className="h-full rounded-full"
+                      style={{
+                        width: `${p.progress}%`,
+                        background: "var(--gradient-primary)",
+                      }}
+                    />
+                  </div>
+                  <div className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary-foreground/80 transition-all group-hover:gap-2">
+                    <span className="text-foreground">Xem chi tiết</span>
+                    <ArrowRight className="h-4 w-4 text-foreground" />
+                  </div>
+                </a>
+              </div>
+
+              {/* Empty space for the other side */}
+              <div
+                className={`hidden md:block ${i % 2 === 1 ? "md:col-start-1 md:row-start-1" : ""}`}
                 aria-hidden
               />
-              <a
-                href={`#${p.id}`}
-                className="card-hover group relative rounded-3xl border border-border bg-card p-5"
-              >
-                <div className="flex items-center gap-3">
-                  <span
-                    className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl text-primary-foreground"
-                    style={{ background: "var(--gradient-primary)" }}
-                  >
-                    <p.icon className="h-5 w-5" />
-                  </span>
-                  <div className="min-w-0">
-                    <div className="text-xs font-medium text-muted-foreground">
-                      Nhiệm vụ {i + 1} · {p.tag}
-                    </div>
-                    <h3 className="truncate text-base font-semibold">{p.title}</h3>
-                  </div>
-                </div>
-                <p className="mt-3 line-clamp-2 text-sm text-muted-foreground">{p.objective}</p>
-                <div className="mt-4 flex items-center justify-between text-xs">
-                  <span className="text-muted-foreground">Tiến độ hoàn thành</span>
-                  <span className="font-medium">{p.progress}%</span>
-                </div>
-                <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-muted">
-                  <div
-                    className="h-full rounded-full"
-                    style={{
-                      width: `${p.progress}%`,
-                      background: "var(--gradient-primary)",
-                    }}
-                  />
-                </div>
-                <div className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary-foreground/80 group-hover:gap-2 transition-all">
-                  <span className="text-foreground">Xem chi tiết</span>
-                  <ArrowRight className="h-4 w-4 text-foreground" />
-                </div>
-              </a>
             </div>
           ))}
         </div>
