@@ -262,6 +262,31 @@ const projects = [
       "Prompt hiệu quả phải rõ vai trò – bối cảnh – nhiệm vụ – định dạng – tiêu chí.",
     ],
     evidence: "Ảnh chụp prompt v1, v2 và câu trả lời AI tương ứng",
+    strengths: [
+      "Viết prompt rõ ràng với đầy đủ vai trò, bối cảnh, yêu cầu và tiêu chí đánh giá.",
+      "So sánh chi tiết hai phiên bản prompt để thấy rõ sự cải thiện về chất lượng đầu ra.",
+      "Áp dụng công thức prompt hiệu quả vào tác vụ học tập cụ thể.",
+    ],
+    improvements: [
+      "Cần thêm ví dụ đa dạng hơn cho các lĩnh vực khác nhau.",
+      "Tìm hiểu sâu hơn về kỹ thuật Chain-of-Thought và Few-shot Prompting.",
+    ],
+    lessons: [
+      "Prompt càng cụ thể và có cấu trúc, đầu ra AI càng chính xác.",
+      "AI là công cụ hỗ trợ tư duy, không thay thế con người.",
+      "Cần kiểm chứng và điều chỉnh kết quả từ AI trước khi sử dụng.",
+    ],
+    academicIntegrity: {
+      howUseAI: [
+        "Sử dụng ChatGPT để thử nghiệm và so sánh các phiên bản prompt.",
+        "Dùng AI làm đối tượng nghiên cứu để hiểu cách cấu trúc prompt ảnh hưởng đến đầu ra.",
+      ],
+      commitments: [
+        "Nội dung phân tích và đánh giá là của cá nhân tôi.",
+        "Tôi đã tự viết và cải tiến prompt dựa trên kiến thức đã học.",
+        "Tôi nhận thức rõ giới hạn và rủi ro của AI.",
+      ],
+    },
   },
   {
     id: "du-an-4",
