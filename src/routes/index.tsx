@@ -498,14 +498,14 @@ const evidence = [
 
 /* ================= Bảng tổng hợp kỹ năng ================= */
 const skillsSummary = [
-  { name: "Quản lý tệp và dữ liệu số", level: 92, desc: "Tổ chức thư mục, đặt tên file, đồng bộ đám mây.", use: "Học tập, nghiên cứu, làm việc dài hạn." },
-  { name: "Tìm kiếm thông tin học thuật", level: 90, desc: "Sử dụng thành thạo hơn 4 toán tử nâng cao.", use: "Viết báo cáo, tiểu luận, nghiên cứu." },
-  { name: "Đánh giá độ tin cậy nguồn", level: 88, desc: "Phân biệt nguồn học thuật – blog – tin không rõ nguồn.", use: "Trích dẫn học thuật, kiểm chứng tin tức." },
-  { name: "Viết Prompt hiệu quả", level: 90, desc: "Cấu trúc prompt theo vai trò – bối cảnh – yêu cầu – định dạng.", use: "Hỗ trợ học, viết, phân tích, sáng tạo nội dung." },
-  { name: "Làm việc nhóm trực tuyến", level: 85, desc: "Điều phối nhiệm vụ, theo dõi tiến độ trên Trello/Notion.", use: "Dự án nhóm, làm việc từ xa." },
-  { name: "Sáng tạo nội dung số bằng AI", level: 87, desc: "Kết hợp AI và biên tập cá nhân để tạo sản phẩm số.", use: "Video học tập, infographic, slide thuyết trình." },
-  { name: "Sử dụng AI có trách nhiệm", level: 93, desc: "Áp dụng bộ 7 nguyên tắc cá nhân trong mọi tác vụ.", use: "Học tập, nghiên cứu, công việc tương lai." },
-  { name: "Tự đánh giá và cải thiện bản thân", level: 88, desc: "Phản chiếu quá trình học và điều chỉnh phương pháp.", use: "Phát triển năng lực học tập suốt đời." },
+  { name: "Quản lý tệp và dữ liệu số", level: 100, desc: "Tổ chức thư mục, đặt tên file, đồng bộ đám mây.", use: "Học tập, nghiên cứu, làm việc dài hạn." },
+  { name: "Tìm kiếm thông tin học thuật", level: 92, desc: "Sử dụng thành thạo hơn 4 toán tử nâng cao.", use: "Viết báo cáo, tiểu luận, nghiên cứu." },
+  { name: "Đánh giá độ tin cậy nguồn", level: 92, desc: "Phân biệt nguồn học thuật – blog – tin không rõ nguồn.", use: "Trích dẫn học thuật, kiểm chứng tin tức." },
+  { name: "Viết Prompt hiệu quả", level: 93, desc: "Cấu trúc prompt theo vai trò – bối cảnh – yêu cầu – định dạng.", use: "Hỗ trợ học, viết, phân tích, sáng tạo nội dung." },
+  { name: "Làm việc nhóm trực tuyến", level: 97, desc: "Điều phối nhiệm vụ, theo dõi tiến độ trên Trello/Notion.", use: "Dự án nhóm, làm việc từ xa." },
+  { name: "Sáng tạo nội dung số bằng AI", level: 93, desc: "Kết hợp AI và biên tập cá nhân để tạo sản phẩm số.", use: "Video học tập, infographic, slide thuyết trình." },
+  { name: "Sử dụng AI có trách nhiệm", level: 100, desc: "Áp dụng bộ 7 nguyên tắc cá nhân trong mọi tác vụ.", use: "Học tập, nghiên cứu, công việc tương lai." },
+  { name: "Tự đánh giá và cải thiện bản thân", level: 97, desc: "Phản chiếu quá trình học và điều chỉnh phương pháp.", use: "Phát triển năng lực học tập suốt đời." },
 ];
 
 /* ============================ COMPONENT ============================ */
