@@ -1516,7 +1516,7 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
 
         {lightbox !== null && p.evidenceImages?.[lightbox] && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-6"
+            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/80 p-6"
             onClick={(e) => {
               if (e.target === e.currentTarget) setLightbox(null);
             }}
@@ -1542,16 +1542,16 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
             >
               <ChevronRight className="h-6 w-6" />
             </button>
-            <figure className="flex max-h-[90vh] w-fit max-w-[90vw] flex-col items-center overflow-hidden rounded-2xl bg-background p-3 shadow-2xl">
+            <div className="flex max-h-[85vh] w-fit max-w-[90vw] items-center justify-center rounded-2xl bg-background p-3 shadow-2xl">
               <img
                 src={duan1Assets[p.evidenceImages[lightbox].src]?.url}
                 alt={p.evidenceImages[lightbox].caption}
-                className="block max-h-[80vh] max-w-full rounded-xl object-contain"
+                className="block max-h-[75vh] max-w-full rounded-xl object-contain"
               />
-              <figcaption className="mt-3 text-center text-sm text-muted-foreground">
-                {p.evidenceImages[lightbox].caption}
-              </figcaption>
-            </figure>
+            </div>
+            <div className="mt-4 max-w-[90vw] text-center text-sm text-white/90">
+              {p.evidenceImages[lightbox].caption}
+            </div>
           </div>
         )}
       </div>
