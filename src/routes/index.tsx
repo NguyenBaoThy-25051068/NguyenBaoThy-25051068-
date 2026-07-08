@@ -611,14 +611,15 @@ function About() {
 
           <div className="rounded-3xl border border-border bg-card p-6">
             <h3 className="flex items-center gap-2 text-lg font-semibold">
-              <Target className="h-4 w-4 text-primary" /> Mục tiêu của Portfolio
+              <Target className="h-4 w-4 text-primary" /> Mục tiêu học tập
             </h3>
             <ul className="mt-3 grid gap-2 text-sm text-muted-foreground">
               {[
-                "Hệ thống hóa toàn bộ các bài tập cuối kỳ của môn học.",
-                "Chứng minh năng lực sử dụng công cụ số và AI trong học tập.",
-                "Lưu trữ sản phẩm cá nhân để dễ dàng truy cập, chia sẻ và phát triển trong tương lai.",
-                "Rèn luyện kỹ năng trình bày, phân tích, phản biện và tự đánh giá bản thân.",
+                "Phát triển kỹ năng số để thích ứng với thời đại công nghệ 4.0 và nhu cầu của thị trường lao động.",
+                "Chủ động tiếp cận và ứng dụng AI như ChatGPT để hỗ trợ học tập và nghiên cứu một cách có trách nhiệm.",
+                "Rèn luyện tư duy phản biện, khả năng đánh giá thông tin và giải quyết vấn đề sáng tạo.",
+                "Xây dựng thói quen học tập suốt đời và cập nhật kiến thức công nghệ liên tục.",
+                "Đạt điểm Xuất sắc (8.1-10) trong môn Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo.",
               ].map((t) => (
                 <li key={t} className="flex gap-2">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
@@ -626,6 +627,30 @@ function About() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          <div className="rounded-3xl border border-border bg-card p-6">
+            <h3 className="flex items-center gap-2 text-lg font-semibold">
+              <Target className="h-4 w-4 text-primary" /> Mục tiêu Portfolio
+            </h3>
+            <ul className="mt-3 grid gap-2 text-sm text-muted-foreground">
+              {[
+                "Tổng hợp quá trình học tập: Ghi lại toàn bộ hành trình học tập qua các bài tập và dự án của môn học.",
+                "Lưu trữ sản phẩm học tập: Xây dựng kho lưu trữ các minh chứng và sản phẩm đã hoàn thành.",
+                "Thể hiện sự tiến bộ: Minh họa rõ ràng sự phát triển và tiến bộ qua từng bài học.",
+              ].map((t) => (
+                <li key={t} className="flex gap-2">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-3xl border border-border bg-card p-6 text-center">
+            <p className="mx-auto max-w-xl text-sm font-medium italic text-foreground">
+              "Học không chỉ để biết, mà học để làm được. Công nghệ là công cụ, nhưng tư duy mới là chìa khóa."
+            </p>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-3">
