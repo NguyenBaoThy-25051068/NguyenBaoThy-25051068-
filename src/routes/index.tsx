@@ -556,7 +556,7 @@ function About() {
       <SectionHeader
         eyebrow="Giới thiệu"
         title="About Me"
-        desc="Chào mừng bạn đến với portfolio của tôi - nơi tôi chia sẻ hành trình học tập và\u00a0\nphát triển kỹ năng số"
+        desc={`Chào mừng bạn đến với portfolio của tôi - nơi tôi chia sẻ hành trình học tập và\u00a0\nphát triển kỹ năng số`}
       />
       <div className="grid gap-6 md:grid-cols-[1fr_1.4fr]">
         {/* Card avatar */}
