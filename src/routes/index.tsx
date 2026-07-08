@@ -384,6 +384,32 @@ const projects = [
       "Cần biết chọn lọc, biên tập và chịu trách nhiệm với nội dung do mình phát hành.",
     ],
     evidence: "Video sản phẩm hoặc ảnh khung hình đại diện",
+    strengths: [
+      "Thiết kế có tính thẩm mỹ cao, phù hợp với chủ đề Prompt Engineering.",
+      "Kết hợp tốt giữa hình ảnh, giọng đọc và văn bản để tạo video dễ hiểu.",
+      "Nội dung được cá nhân hóa sau khi chỉnh sửa thủ công trên CapCut/Canva.",
+    ],
+    improvements: [
+      "Cần học thêm về kỹ thuật video editing để chuyển cảnh mượt mà hơn.",
+      "Nên bổ sung thêm ví dụ thực tế minh họa cho từng loại prompt.",
+    ],
+    lessons: [
+      "Sáng tạo nội dung số cần có quy trình rõ ràng: lên ý tưởng – viết kịch bản – thiết kế – kiểm duyệt.",
+      "AI giúp tăng tốc, nhưng chất lượng cuối cùng phụ thuộc vào khâu biên tập của con người.",
+      "Cần kiểm tra bản quyền hình ảnh, nhạc nền và ghi nguồn đầy đủ khi xuất bản.",
+    ],
+    academicIntegrity: {
+      howUseAI: [
+        "Dùng ChatGPT để gợi ý ý tưởng và viết kịch bản cho video.",
+        "Sử dụng DALL·E / Gemini để sinh ảnh minh họa theo phong cách đã chọn.",
+        "Dùng AI tạo giọng đọc, sau đó tự cắt ghép và chỉnh sửa trên CapCut/Canva.",
+      ],
+      commitments: [
+        "Ý tưởng chính và kịch bản là của tôi, AI chỉ hỗ trợ gợi ý và tạo nguyên liệu.",
+        "Tôi đã chỉnh sửa và cá nhân hóa mọi nội dung trước khi xuất bản.",
+        "Tôi tôn trọng bản quyền và ghi nguồn đầy đủ cho hình ảnh, nhạc nền và tài liệu tham khảo.",
+      ],
+    },
   },
   {
     id: "du-an-6",
