@@ -1,6 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import avatarAsset from "@/assets/avatar.jpg.asset.json";
+import duan1_15 from "@/assets/duan1-15.png.asset.json";
+import duan1_16 from "@/assets/duan1-16.png.asset.json";
+import duan1_17 from "@/assets/duan1-17.png.asset.json";
+import duan1_18 from "@/assets/duan1-18.png.asset.json";
+import duan1_19 from "@/assets/duan1-19.png.asset.json";
+import duan1_20 from "@/assets/duan1-20.png.asset.json";
+import duan1_21 from "@/assets/duan1-21.png.asset.json";
+
+const duan1Assets: Record<string, { url: string }> = {
+  "duan1-15": duan1_15,
+  "duan1-16": duan1_16,
+  "duan1-17": duan1_17,
+  "duan1-18": duan1_18,
+  "duan1-19": duan1_19,
+  "duan1-20": duan1_20,
+  "duan1-21": duan1_21,
+};
 import {
   FolderTree,
   Search,
