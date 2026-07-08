@@ -791,7 +791,7 @@ function Projects() {
     <section id="du-an" className="mx-auto max-w-6xl px-5 py-20">
       <SectionHeader
         eyebrow="Dự án học tập"
-        title="Sáu bài tập – sáu sản phẩm số"
+        title="6 bài tập – 6 sản phẩm số"
         desc="Mỗi dự án được trình bày với cấu trúc thống nhất: mục tiêu, quá trình thực hiện, công cụ, minh chứng, phân tích và bài học rút ra."
       />
       <div className="grid gap-10">
