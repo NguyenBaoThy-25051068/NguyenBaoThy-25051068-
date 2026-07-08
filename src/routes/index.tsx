@@ -165,6 +165,34 @@ const projects = [
       "Không nên phụ thuộc vào một nguồn duy nhất, đặc biệt khi nguồn thiếu tác giả rõ ràng.",
     ],
     evidence: "Ảnh kết quả tìm kiếm nâng cao + bảng đánh giá nguồn",
+    strengths: [
+      "Thu thập được 12 tài liệu đa dạng: bài báo khoa học, sách chuyên khảo, nguồn mở.",
+      "Đánh giá có hệ thống theo 4 tiêu chí: Tác giả, Cơ quan xuất bản, Phương pháp, Trích dẫn.",
+      "Phân loại rõ ràng độ tin cậy: Rất cao, Cao, Trung bình, Thấp.",
+      "Xác định được nguồn không đáng tin (blog cá nhân) và lý do tại sao.",
+    ],
+    improvements: [
+      "Cần mở rộng tìm kiếm trên nhiều cơ sở dữ liệu quốc tế hơn.",
+      "Nên bổ sung thêm các nghiên cứu thực nghiệm tại Việt Nam.",
+    ],
+    lessons: [
+      "Không phải mọi thông tin trên mạng đều đáng tin cậy - cần kiểm tra nguồn gốc.",
+      "Các tạp chí khoa học và báo cáo từ tổ chức uy tín (OECD, UNESCO) có độ tin cậy cao.",
+      "Blog cá nhân và nguồn không rõ tác giả cần được xác minh kỹ lưỡng.",
+      "Tính cập nhật của tài liệu rất quan trọng với chủ đề AI vì công nghệ thay đổi nhanh.",
+    ],
+    academicIntegrity: {
+      howUseAI: [
+        "Sử dụng AI để gợi ý từ khóa tìm kiếm phù hợp với chủ đề.",
+        "Dùng AI để tóm tắt nội dung chính của các bài báo dài.",
+      ],
+      commitments: [
+        "Tôi đã tự tìm kiếm và chọn lọc 12 nguồn thông tin từ các cơ sở dữ liệu học thuật.",
+        "Việc đánh giá độ tin cậy được thực hiện bởi tôi dựa trên 4 tiêu chí đã học.",
+        "AI chỉ hỗ trợ tóm tắt, không thay thế việc đọc hiểu và phân tích.",
+        "Tất cả trích dẫn được kiểm tra và ghi nguồn đầy đủ.",
+      ],
+    },
   },
   {
     id: "du-an-3",
