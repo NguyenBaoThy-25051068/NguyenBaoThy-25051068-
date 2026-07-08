@@ -885,7 +885,13 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
 
       {/* Body */}
       <div className="grid gap-6 p-6 md:grid-cols-2">
-        <Block icon={Target} title="Mục tiêu">
+        {p.summary && (
+          <Block icon={BookOpen} title="Tóm tắt nhanh" wide>
+            <p>{p.summary}</p>
+          </Block>
+        )}
+
+        <Block icon={Target} title="Mục tiêu bài tập">
           <p>{p.objective}</p>
         </Block>
 
