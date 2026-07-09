@@ -258,8 +258,8 @@ const projects = [
     ],
     evidence: "Báo cáo Word và ảnh chụp màn hình các nguồn học thuật đã tra cứu (Decoy Effect).",
     evidenceFile: {
-      name: "BaoCao_DecoyEffect.docx",
-      label: "Tải báo cáo Word (Decoy Effect)",
+      name: "Bài 2-Nguyễn Bảo Thy.docx",
+      label: "Tải báo cáo Word (Bài 2 – Nguyễn Bảo Thy)",
     },
     evidenceImages: [
       { src: "duan2-1", caption: "ScienceDirect – Herne (1997): Decoy alternatives in policy choices" },
