@@ -370,6 +370,10 @@ const projects = [
       "Prompt hiệu quả phải rõ vai trò – bối cảnh – nhiệm vụ – định dạng – tiêu chí.",
     ],
     evidence: "Ảnh chụp prompt v1, v2 và câu trả lời AI tương ứng",
+    evidenceImages: [
+      { src: "duan3-1", caption: "Prompt v1: “Tóm tắt nội dung bài học về Prompt Engineering.” – câu trả lời chung chung, thiếu cấu trúc." },
+      { src: "duan3-2", caption: "Prompt v2 (cải tiến): thêm vai trò, bối cảnh, yêu cầu định dạng và câu hỏi phản biện – câu trả lời rõ ràng, có cấu trúc." },
+    ],
     strengths: [
       "Viết prompt rõ ràng với đầy đủ vai trò, bối cảnh, yêu cầu và tiêu chí đánh giá.",
       "So sánh chi tiết hai phiên bản prompt để thấy rõ sự cải thiện về chất lượng đầu ra.",
