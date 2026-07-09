@@ -18,6 +18,10 @@ import duan2_5 from "@/assets/duan2-5.png.asset.json";
 import duan2_6 from "@/assets/duan2-6.png.asset.json";
 import duan3_1 from "@/assets/duan3-1.png.asset.json";
 import duan3_2 from "@/assets/duan3-2.png.asset.json";
+import duan5_1 from "@/assets/duan5-1.png.asset.json";
+import duan5_2 from "@/assets/duan5-2.png.asset.json";
+import duan5_3 from "@/assets/duan5-3.png.asset.json";
+import duan5Baocao from "@/assets/duan5-baocao.docx.asset.json";
 
 const duan1Assets: Record<string, { url: string }> = {
   "duan1-15": duan1_15,
@@ -35,6 +39,9 @@ const duan1Assets: Record<string, { url: string }> = {
   "duan2-6": duan2_6,
   "duan3-1": duan3_1,
   "duan3-2": duan3_2,
+  "duan5-1": duan5_1,
+  "duan5-2": duan5_2,
+  "duan5-3": duan5_3,
 };
 import {
   FolderTree,
@@ -505,7 +512,17 @@ const projects = [
       "AI là công cụ hỗ trợ sáng tạo, không thay thế hoàn toàn tư duy cá nhân.",
       "Cần biết chọn lọc, biên tập và chịu trách nhiệm với nội dung do mình phát hành.",
     ],
-    evidence: "Video sản phẩm hoặc ảnh khung hình đại diện",
+    evidence: "Ảnh minh họa sản phẩm nội dung số do AI hỗ trợ tạo ra và báo cáo bài 5.",
+    evidenceImages: [
+      { src: "duan5-1", caption: "Infographic “AI in University Learning” – 5 phần: Introduction, Benefits, Challenges, Responsible AI Use, Key Takeaways." },
+      { src: "duan5-2", caption: "Prompt DALL·E: “Flat illustration of university students using AI for studying, blue vector style.”" },
+      { src: "duan5-3", caption: "Prompt hoàn chỉnh cho infographic A4 – tông xanh trắng, phong cách học thuật hiện đại." },
+    ],
+    evidenceFile: {
+      name: "Bài 5- Nguyễn Bảo Thy.docx",
+      label: "Tải báo cáo Word (Bài 5 – Nguyễn Bảo Thy)",
+      url: duan5Baocao.url,
+    },
     strengths: [
       "Thiết kế có tính thẩm mỹ cao, phù hợp với chủ đề Prompt Engineering.",
       "Kết hợp tốt giữa hình ảnh, giọng đọc và văn bản để tạo video dễ hiểu.",
