@@ -893,7 +893,7 @@ function About() {
             <img
               src={avatarAsset.url}
               alt="Ảnh đại diện Nguyễn Bảo Thy"
-              className="h-full w-full object-cover object-[center_25%]"
+              className="h-full w-full object-cover object-[center_30%]"
             />
           </div>
           <h3 className="mt-5 text-center text-xl font-semibold">Nguyễn Bảo Thy</h3>
