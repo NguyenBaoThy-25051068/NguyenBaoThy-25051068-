@@ -27,22 +27,13 @@ import duan6_2 from "@/assets/duan6-2.png.asset.json";
 import duan6_3 from "@/assets/duan6-3.png.asset.json";
 import duan6Baocao from "@/assets/duan6-baocao.docx.asset.json";
 
-// When hosted outside Lovable (e.g. GitHub Pages), the /__l5e/* CDN path is
-// not served by the host. Rewrite asset URLs to the absolute Lovable CDN origin.
+// Use absolute asset URLs so images/files still load when hosted on GitHub Pages.
 const ASSET_ORIGIN = "https://kind-logic-mate.lovable.app";
-const __allAssets = [
-  avatarAsset, duan2Baocao, duan4Baocao,
-  duan1_15, duan1_16, duan1_17, duan1_18, duan1_19, duan1_20, duan1_21,
-  duan2_1, duan2_2, duan2_3, duan2_4, duan2_5, duan2_6,
-  duan3_1, duan3_2,
-  duan5_1, duan5_2, duan5_3, duan5Baocao,
-  duan6_1, duan6_2, duan6_3, duan6Baocao,
-];
-for (const a of __allAssets) {
-  if (a && typeof a.url === "string" && a.url.startsWith("/__l5e")) {
-    try { (a as { url: string }).url = ASSET_ORIGIN + a.url; } catch { /* frozen */ }
-  }
-}
+const assetUrl = (asset?: { url?: string } | string) => {
+  const url = typeof asset === "string" ? asset : asset?.url;
+  if (!url) return undefined;
+  return encodeURI(url.startsWith("/__l5e") ? `${ASSET_ORIGIN}${url}` : url);
+};
 
 
 const duan1Assets: Record<string, { url: string }> = {
@@ -909,7 +900,7 @@ function About() {
         >
           <div className="mx-auto h-40 w-40 overflow-hidden rounded-full border-4 border-white/60 shadow-md">
             <img
-              src={avatarAsset.url}
+              src={assetUrl(avatarAsset)}
               alt="Ảnh đại diện Nguyễn Bảo Thy"
               className="h-full w-full object-cover object-[center_35%]"
             />
@@ -1558,7 +1549,7 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
                       className="cursor-pointer overflow-hidden rounded-xl border border-border bg-background/60 transition hover:opacity-90"
                     >
                       <img
-                        src={duan1Assets[img.src]?.url}
+                        src={assetUrl(duan1Assets[img.src])}
                         alt={img.caption}
                         loading="lazy"
                         className="h-32 w-full object-cover"
@@ -1576,7 +1567,7 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
                         className="cursor-pointer overflow-hidden rounded-xl border border-border bg-background/60 transition hover:opacity-90"
                       >
                         <img
-                          src={duan1Assets[img.src]?.url}
+                          src={assetUrl(duan1Assets[img.src])}
                           alt={img.caption}
                           loading="lazy"
                           className="h-32 w-full object-cover"
@@ -1594,7 +1585,7 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
             )}
             {p.evidenceFile && (
               <a
-                href={p.evidenceFile.url ?? duan2Baocao.url}
+                href={assetUrl(p.evidenceFile.url ?? duan2Baocao.url)}
                 download={p.evidenceFile.name}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -1651,7 +1642,7 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
             <div className="flex max-h-[calc(100vh-8rem)] w-full flex-col items-center overflow-y-auto py-4">
               <div className="flex w-fit max-w-[calc(100vw-4rem)] items-start justify-center rounded-2xl bg-background p-3 shadow-2xl">
                 <img
-                  src={duan1Assets[p.evidenceImages[lightbox].src]?.url}
+                  src={assetUrl(duan1Assets[p.evidenceImages[lightbox].src])}
                   alt={p.evidenceImages[lightbox].caption}
                   className="w-full rounded-xl object-contain"
                 />
@@ -1721,7 +1712,7 @@ function EvidenceGallery() {
         />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {evidence.map((e) => {
-            const imgUrl = e.image ? duan1Assets[e.image]?.url : undefined;
+            const imgUrl = e.image ? assetUrl(duan1Assets[e.image]) : undefined;
             return (
             <div
               key={e.title}
