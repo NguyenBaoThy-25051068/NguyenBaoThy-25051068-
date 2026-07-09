@@ -1,29 +1,22 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-// Set BASE_PATH and STATIC_BUILD=1 in the GitHub Actions workflow to output
-// a static SPA build for GitHub Pages. Inside Lovable those envs are unset,
-// so the app builds normally against the Cloudflare preset.
+// For GitHub Pages, set BASE_PATH and STATIC_BUILD=1 in the workflow.
+// This turns on TanStack Start's SPA mode, which prerenders a single
+// client-side shell at BASE_PATH/index.html — perfect for static hosts.
 const basePath = process.env.BASE_PATH || "/";
 const isStaticBuild = process.env.STATIC_BUILD === "1";
-const routerBasepath = basePath === "/" ? "/" : basePath.replace(/^\/+|\/+$/g, "");
 
 export default defineConfig({
   vite: {
     base: basePath,
   },
-  ...(isStaticBuild
-    ? {
-        nitro: { preset: "static" as const },
-        tanstackStart: {
-          router: { basepath: routerBasepath },
-          server: { entry: "server" },
-          prerender: { enabled: true, crawlLinks: true },
+  tanstackStart: {
+    server: { entry: "server" },
+    ...(isStaticBuild
+      ? {
+          spa: { enabled: true, maskPath: "/" },
           pages: [{ path: "/" }],
-        },
-      }
-    : {
-        tanstackStart: {
-          server: { entry: "server" },
-        },
-      }),
+        }
+      : {}),
+  },
 });
