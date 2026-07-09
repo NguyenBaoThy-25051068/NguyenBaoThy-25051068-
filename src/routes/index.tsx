@@ -15,6 +15,8 @@ import duan2_3 from "@/assets/duan2-3.png.asset.json";
 import duan2_4 from "@/assets/duan2-4.png.asset.json";
 import duan2_5 from "@/assets/duan2-5.png.asset.json";
 import duan2_6 from "@/assets/duan2-6.png.asset.json";
+import duan3_1 from "@/assets/duan3-1.png.asset.json";
+import duan3_2 from "@/assets/duan3-2.png.asset.json";
 
 const duan1Assets: Record<string, { url: string }> = {
   "duan1-15": duan1_15,
@@ -30,6 +32,8 @@ const duan1Assets: Record<string, { url: string }> = {
   "duan2-4": duan2_4,
   "duan2-5": duan2_5,
   "duan2-6": duan2_6,
+  "duan3-1": duan3_1,
+  "duan3-2": duan3_2,
 };
 import {
   FolderTree,
@@ -366,6 +370,10 @@ const projects = [
       "Prompt hiệu quả phải rõ vai trò – bối cảnh – nhiệm vụ – định dạng – tiêu chí.",
     ],
     evidence: "Ảnh chụp prompt v1, v2 và câu trả lời AI tương ứng",
+    evidenceImages: [
+      { src: "duan3-1", caption: "Prompt v1: “Tóm tắt nội dung bài học về Prompt Engineering.” – câu trả lời chung chung, thiếu cấu trúc." },
+      { src: "duan3-2", caption: "Prompt v2 (cải tiến): thêm vai trò, bối cảnh, yêu cầu định dạng và câu hỏi phản biện – câu trả lời rõ ràng, có cấu trúc." },
+    ],
     strengths: [
       "Viết prompt rõ ràng với đầy đủ vai trò, bối cảnh, yêu cầu và tiêu chí đánh giá.",
       "So sánh chi tiết hai phiên bản prompt để thấy rõ sự cải thiện về chất lượng đầu ra.",
