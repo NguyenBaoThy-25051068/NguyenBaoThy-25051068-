@@ -27,6 +27,24 @@ import duan6_2 from "@/assets/duan6-2.png.asset.json";
 import duan6_3 from "@/assets/duan6-3.png.asset.json";
 import duan6Baocao from "@/assets/duan6-baocao.docx.asset.json";
 
+// When hosted outside Lovable (e.g. GitHub Pages), the /__l5e/* CDN path is
+// not served by the host. Rewrite asset URLs to the absolute Lovable CDN origin.
+const ASSET_ORIGIN = "https://kind-logic-mate.lovable.app";
+const __allAssets = [
+  avatarAsset, duan2Baocao, duan4Baocao,
+  duan1_15, duan1_16, duan1_17, duan1_18, duan1_19, duan1_20, duan1_21,
+  duan2_1, duan2_2, duan2_3, duan2_4, duan2_5, duan2_6,
+  duan3_1, duan3_2,
+  duan5_1, duan5_2, duan5_3, duan5Baocao,
+  duan6_1, duan6_2, duan6_3, duan6Baocao,
+];
+for (const a of __allAssets) {
+  if (a && typeof a.url === "string" && a.url.startsWith("/__l5e")) {
+    try { (a as { url: string }).url = ASSET_ORIGIN + a.url; } catch { /* frozen */ }
+  }
+}
+
+
 const duan1Assets: Record<string, { url: string }> = {
   "duan1-15": duan1_15,
   "duan1-16": duan1_16,
