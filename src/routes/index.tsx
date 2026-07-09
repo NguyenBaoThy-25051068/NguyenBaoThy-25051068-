@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import avatarAsset from "@/assets/avatar.jpg.asset.json";
 import duan2Baocao from "@/assets/duan2-baocao.docx.asset.json";
+import duan4Baocao from "@/assets/duan4-baocao.pdf.asset.json";
 import duan1_15 from "@/assets/duan1-15.png.asset.json";
 import duan1_16 from "@/assets/duan1-16.png.asset.json";
 import duan1_17 from "@/assets/duan1-17.png.asset.json";
@@ -459,7 +460,16 @@ const projects = [
       "Làm việc nhóm hiệu quả cần có kế hoạch rõ ràng và công cụ hỗ trợ theo dõi.",
       "Công cụ số nâng cao tính trách nhiệm cá nhân và khả năng phối hợp tập thể.",
     ],
-    evidence: "Ảnh bảng công việc trên Trello/Notion",
+    evidence: "Ảnh bảng công việc trên Trello/Notion và báo cáo nhóm.",
+    evidenceLink: {
+      href: "https://drive.google.com/drive/folders/19bKuWKNPT7Gt_t_HsSl46NEnNrUTzUp-",
+      label: "VNU1001_Nhom_32_E252046_BGK",
+    },
+    evidenceFile: {
+      name: "VNU1001_Nhom_32_E252046_BGK.pdf",
+      label: "Tải báo cáo nhóm (PDF)",
+      url: duan4Baocao.url,
+    },
   },
   {
     id: "du-an-5",
@@ -1485,75 +1495,78 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
         )}
 
         <Block icon={ImageIcon} title="Minh chứng" wide>
-          {p.evidenceImages && p.evidenceImages.length > 0 ? (
-            <div className="grid gap-3">
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-                {p.evidenceImages.slice(0, 4).map((img, idx) => (
-                  <figure
-                    key={idx}
-                    onClick={() => setLightbox(idx)}
-                    className="cursor-pointer overflow-hidden rounded-xl border border-border bg-background/60 transition hover:opacity-90"
-                  >
-                    <img
-                      src={duan1Assets[img.src]?.url}
-                      alt={img.caption}
-                      loading="lazy"
-                      className="h-32 w-full object-cover"
-                    />
-                    <figcaption className="px-3 py-2 text-xs text-muted-foreground">{img.caption}</figcaption>
-                  </figure>
-                ))}
-              </div>
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-                {p.evidenceImages.slice(4).map((img, idx) => (
-                  <figure
-                    key={idx}
-                    onClick={() => setLightbox(idx + 4)}
-                    className="cursor-pointer overflow-hidden rounded-xl border border-border bg-background/60 transition hover:opacity-90"
-                  >
-                    <img
-                      src={duan1Assets[img.src]?.url}
-                      alt={img.caption}
-                      loading="lazy"
-                      className="h-32 w-full object-cover"
-                    />
-                    <figcaption className="px-3 py-2 text-xs text-muted-foreground">{img.caption}</figcaption>
-                  </figure>
-                ))}
-              </div>
-              {p.evidenceFile && (
-                <a
-                  href={duan2Baocao.url}
-                  download={p.evidenceFile.name}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-fit items-center gap-2 rounded-xl border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-medium text-foreground transition hover:bg-primary/20"
-                >
-                  <BookOpen className="h-4 w-4 text-primary" />
-                  {p.evidenceFile.label}
-                  <span className="text-xs text-muted-foreground">({p.evidenceFile.name})</span>
-                </a>
-              )}
-            </div>
-          ) : p.evidenceFile ? (
-            <div className="space-y-3">
+          <div className="grid gap-3">
+            {p.evidenceImages && p.evidenceImages.length > 0 ? (
+              <>
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                  {p.evidenceImages.slice(0, 4).map((img, idx) => (
+                    <figure
+                      key={idx}
+                      onClick={() => setLightbox(idx)}
+                      className="cursor-pointer overflow-hidden rounded-xl border border-border bg-background/60 transition hover:opacity-90"
+                    >
+                      <img
+                        src={duan1Assets[img.src]?.url}
+                        alt={img.caption}
+                        loading="lazy"
+                        className="h-32 w-full object-cover"
+                      />
+                      <figcaption className="px-3 py-2 text-xs text-muted-foreground">{img.caption}</figcaption>
+                    </figure>
+                  ))}
+                </div>
+                {p.evidenceImages.length > 4 && (
+                  <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                    {p.evidenceImages.slice(4).map((img, idx) => (
+                      <figure
+                        key={idx}
+                        onClick={() => setLightbox(idx + 4)}
+                        className="cursor-pointer overflow-hidden rounded-xl border border-border bg-background/60 transition hover:opacity-90"
+                      >
+                        <img
+                          src={duan1Assets[img.src]?.url}
+                          alt={img.caption}
+                          loading="lazy"
+                          className="h-32 w-full object-cover"
+                        />
+                        <figcaption className="px-3 py-2 text-xs text-muted-foreground">{img.caption}</figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                )}
+              </>
+            ) : !p.evidenceFile && !p.evidenceLink ? (
               <EvidencePlaceholder text={p.evidence} />
+            ) : (
+              <p className="text-sm text-muted-foreground">{p.evidence}</p>
+            )}
+            {p.evidenceFile && (
               <a
-                href={duan2Baocao.url}
+                href={p.evidenceFile.url ?? duan2Baocao.url}
                 download={p.evidenceFile.name}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-medium text-foreground transition hover:bg-primary/20"
+                className="inline-flex w-fit items-center gap-2 rounded-xl border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-medium text-foreground transition hover:bg-primary/20"
               >
                 <BookOpen className="h-4 w-4 text-primary" />
                 {p.evidenceFile.label}
                 <span className="text-xs text-muted-foreground">({p.evidenceFile.name})</span>
               </a>
-            </div>
-          ) : (
-            <EvidencePlaceholder text={p.evidence} />
-          )}
+            )}
+            {p.evidenceLink && (
+              <a
+                href={p.evidenceLink.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-fit items-center gap-2 rounded-xl border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-medium text-foreground transition hover:bg-primary/20"
+              >
+                <FolderTree className="h-4 w-4 text-primary" />
+                {p.evidenceLink.label}
+              </a>
+            )}
+          </div>
         </Block>
+
 
         {lightbox !== null && p.evidenceImages?.[lightbox] && (
           <div
