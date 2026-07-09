@@ -10,6 +10,7 @@ export default defineConfig({
   vite: {
     base: basePath,
   },
+  ...(isStaticBuild ? { nitro: { preset: "node-server" as const } } : {}),
   tanstackStart: {
     server: { entry: "server" },
     ...(isStaticBuild
