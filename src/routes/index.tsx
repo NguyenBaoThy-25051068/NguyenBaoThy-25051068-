@@ -22,6 +22,10 @@ import duan5_1 from "@/assets/duan5-1.png.asset.json";
 import duan5_2 from "@/assets/duan5-2.png.asset.json";
 import duan5_3 from "@/assets/duan5-3.png.asset.json";
 import duan5Baocao from "@/assets/duan5-baocao.docx.asset.json";
+import duan6_1 from "@/assets/duan6-1.png.asset.json";
+import duan6_2 from "@/assets/duan6-2.png.asset.json";
+import duan6_3 from "@/assets/duan6-3.png.asset.json";
+import duan6Baocao from "@/assets/duan6-baocao.docx.asset.json";
 
 const duan1Assets: Record<string, { url: string }> = {
   "duan1-15": duan1_15,
@@ -42,6 +46,9 @@ const duan1Assets: Record<string, { url: string }> = {
   "duan5-1": duan5_1,
   "duan5-2": duan5_2,
   "duan5-3": duan5_3,
+  "duan6-1": duan6_1,
+  "duan6-2": duan6_2,
+  "duan6-3": duan6_3,
 };
 import {
   FolderTree,
@@ -591,7 +598,17 @@ const projects = [
       "Trách nhiệm số là kỹ năng quan trọng trong thời đại AI.",
       "Sử dụng AI đúng cách giúp người học phát triển bền vững hơn.",
     ],
-    evidence: "Ảnh bộ nguyên tắc cá nhân + trích dẫn quy định nhà trường",
+    evidence: "Ảnh bộ nguyên tắc cá nhân + trích dẫn quy định nhà trường và báo cáo bài 6.",
+    evidenceImages: [
+      { src: "duan6-1", caption: "Infographic “Dùng AI thông minh” – 6 nguyên tắc giúp học tập và làm việc hiệu quả hơn." },
+      { src: "duan6-2", caption: "Infographic “Học cùng AI an toàn” – 5 nguyên tắc dùng AI hiệu quả và có trách nhiệm." },
+      { src: "duan6-3", caption: "Infographic “Đánh giá câu trả lời của AI” – 6 bước kiểm tra trước khi tin và sử dụng." },
+    ],
+    evidenceFile: {
+      name: "Bài 6- Nguyễn Bảo Thy.docx",
+      label: "Tải báo cáo Word (Bài 6 – Nguyễn Bảo Thy)",
+      url: duan6Baocao.url,
+    },
     strengths: [
       "Phân tích sâu chính sách AI của các trường đại học, đặc biệt là case study BUV với thang đánh giá AI nhiều cấp độ.",
       "Thực hành minh bạch: ghi rõ từng bước sử dụng AI (gợi ý khía cạnh, lập dàn ý, chỉnh sửa ngôn ngữ, kiểm tra lỗi).",
