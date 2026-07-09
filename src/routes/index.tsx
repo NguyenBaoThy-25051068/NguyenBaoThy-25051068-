@@ -460,7 +460,16 @@ const projects = [
       "Làm việc nhóm hiệu quả cần có kế hoạch rõ ràng và công cụ hỗ trợ theo dõi.",
       "Công cụ số nâng cao tính trách nhiệm cá nhân và khả năng phối hợp tập thể.",
     ],
-    evidence: "Ảnh bảng công việc trên Trello/Notion",
+    evidence: "Ảnh bảng công việc trên Trello/Notion và báo cáo nhóm.",
+    evidenceLink: {
+      href: "https://drive.google.com/drive/folders/19bKuWKNPT7Gt_t_HsSl46NEnNrUTzUp-",
+      label: "VNU1001_Nhom_32_E252046_BGK",
+    },
+    evidenceFile: {
+      name: "VNU1001_Nhom_32_E252046_BGK.pdf",
+      label: "Tải báo cáo nhóm (PDF)",
+      url: duan4Baocao.url,
+    },
   },
   {
     id: "du-an-5",
