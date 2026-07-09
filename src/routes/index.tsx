@@ -642,14 +642,14 @@ const projects = [
   },
 ];
 
-/* ================= Placeholder minh chứng ================= */
+/* ================= Minh chứng tổng hợp từ 6 dự án ================= */
 const evidence = [
-  { title: "Cấu trúc thư mục môn học", desc: "Ảnh chụp hệ thống thư mục và quy tắc đặt tên file.", icon: FolderTree, tone: "pink" },
-  { title: "Kết quả tìm kiếm học thuật", desc: "Ảnh kết quả áp dụng toán tử site:, filetype:, intitle:…", icon: Search, tone: "blue" },
-  { title: "So sánh Prompt v1 và v2", desc: "Ảnh chụp prompt ban đầu, prompt cải tiến và phản hồi AI.", icon: MessageSquareCode, tone: "pink" },
-  { title: "Bảng quản lý công việc nhóm", desc: "Ảnh chụp Trello/Notion phân công và tiến độ nhóm.", icon: Users, tone: "blue" },
-  { title: "Sản phẩm AI tạo sinh", desc: "Video ngắn / infographic được sản xuất với hỗ trợ của AI.", icon: PlayCircle, tone: "pink" },
-  { title: "Bộ nguyên tắc sử dụng AI", desc: "7 nguyên tắc cá nhân về sử dụng AI có trách nhiệm.", icon: ShieldCheck, tone: "blue" },
+  { title: "Cấu trúc thư mục môn học", desc: "Ảnh chụp hệ thống thư mục và quy tắc đặt tên file (Bài 1).", icon: FolderTree, tone: "pink", image: "duan1-15", href: "#du-an-1" },
+  { title: "Kết quả tìm kiếm học thuật", desc: "Áp dụng toán tử site:, filetype:, intitle:… và đánh giá nguồn (Bài 2).", icon: Search, tone: "blue", image: "duan2-1", href: "#du-an-2" },
+  { title: "So sánh Prompt v1 và v2", desc: "Prompt ban đầu, prompt cải tiến và phản hồi AI tương ứng (Bài 3).", icon: MessageSquareCode, tone: "pink", image: "duan3-1", href: "#du-an-3" },
+  { title: "Bảng quản lý công việc nhóm", desc: "Phân công, theo dõi tiến độ trên Google Drive nhóm (Bài 4).", icon: Users, tone: "blue", href: "#du-an-4" },
+  { title: "Sản phẩm AI tạo sinh", desc: "Infographic “AI in University Learning” được sản xuất với hỗ trợ của AI (Bài 5).", icon: PlayCircle, tone: "pink", image: "duan5-1", href: "#du-an-5" },
+  { title: "Bộ nguyên tắc sử dụng AI", desc: "Infographic 6 nguyên tắc dùng AI thông minh & có trách nhiệm (Bài 6).", icon: ShieldCheck, tone: "blue", image: "duan6-1", href: "#du-an-6" },
 ];
 
 /* ================= Bảng tổng hợp kỹ năng ================= */
@@ -1702,31 +1702,45 @@ function EvidenceGallery() {
           desc="Thư viện minh chứng trực quan cho toàn bộ quá trình học tập. Có thể thay các ảnh placeholder bằng minh chứng thật."
         />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {evidence.map((e) => (
+          {evidence.map((e) => {
+            const imgUrl = e.image ? duan1Assets[e.image]?.url : undefined;
+            return (
             <div
               key={e.title}
               className="reveal card-hover overflow-hidden rounded-3xl border border-border bg-card"
             >
-              <div
-                className="grid aspect-video place-items-center"
-                style={{
-                  background:
-                    e.tone === "pink"
-                      ? "linear-gradient(135deg, oklch(0.94 0.06 340), oklch(0.92 0.08 320))"
-                      : "linear-gradient(135deg, oklch(0.93 0.07 220), oklch(0.94 0.06 200))",
-                }}
-              >
-                <e.icon className="h-10 w-10 text-foreground/70" />
-              </div>
+              {imgUrl ? (
+                <a href={e.href} className="block aspect-video overflow-hidden bg-muted">
+                  <img
+                    src={imgUrl}
+                    alt={e.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </a>
+              ) : (
+                <div
+                  className="grid aspect-video place-items-center"
+                  style={{
+                    background:
+                      e.tone === "pink"
+                        ? "linear-gradient(135deg, oklch(0.94 0.06 340), oklch(0.92 0.08 320))"
+                        : "linear-gradient(135deg, oklch(0.93 0.07 220), oklch(0.94 0.06 200))",
+                  }}
+                >
+                  <e.icon className="h-10 w-10 text-foreground/70" />
+                </div>
+              )}
               <div className="p-5">
                 <h3 className="text-base font-semibold">{e.title}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">{e.desc}</p>
-                <button className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-foreground hover:gap-2 transition-all">
+                <a href={e.href} className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-foreground hover:gap-2 transition-all">
                   Xem chi tiết <ArrowRight className="h-4 w-4" />
-                </button>
+                </a>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
