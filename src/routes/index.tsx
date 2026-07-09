@@ -598,7 +598,17 @@ const projects = [
       "Trách nhiệm số là kỹ năng quan trọng trong thời đại AI.",
       "Sử dụng AI đúng cách giúp người học phát triển bền vững hơn.",
     ],
-    evidence: "Ảnh bộ nguyên tắc cá nhân + trích dẫn quy định nhà trường",
+    evidence: "Ảnh bộ nguyên tắc cá nhân + trích dẫn quy định nhà trường và báo cáo bài 6.",
+    evidenceImages: [
+      { src: "duan6-1", caption: "Infographic “Dùng AI thông minh” – 6 nguyên tắc giúp học tập và làm việc hiệu quả hơn." },
+      { src: "duan6-2", caption: "Infographic “Học cùng AI an toàn” – 5 nguyên tắc dùng AI hiệu quả và có trách nhiệm." },
+      { src: "duan6-3", caption: "Infographic “Đánh giá câu trả lời của AI” – 6 bước kiểm tra trước khi tin và sử dụng." },
+    ],
+    evidenceFile: {
+      name: "Bài 6- Nguyễn Bảo Thy.docx",
+      label: "Tải báo cáo Word (Bài 6 – Nguyễn Bảo Thy)",
+      url: duan6Baocao.url,
+    },
     strengths: [
       "Phân tích sâu chính sách AI của các trường đại học, đặc biệt là case study BUV với thang đánh giá AI nhiều cấp độ.",
       "Thực hành minh bạch: ghi rõ từng bước sử dụng AI (gợi ý khía cạnh, lập dàn ý, chỉnh sửa ngôn ngữ, kiểm tra lỗi).",
