@@ -9,6 +9,12 @@ import duan1_18 from "@/assets/duan1-18.png.asset.json";
 import duan1_19 from "@/assets/duan1-19.png.asset.json";
 import duan1_20 from "@/assets/duan1-20.png.asset.json";
 import duan1_21 from "@/assets/duan1-21.png.asset.json";
+import duan2_1 from "@/assets/duan2-1.png.asset.json";
+import duan2_2 from "@/assets/duan2-2.png.asset.json";
+import duan2_3 from "@/assets/duan2-3.png.asset.json";
+import duan2_4 from "@/assets/duan2-4.png.asset.json";
+import duan2_5 from "@/assets/duan2-5.png.asset.json";
+import duan2_6 from "@/assets/duan2-6.png.asset.json";
 
 const duan1Assets: Record<string, { url: string }> = {
   "duan1-15": duan1_15,
@@ -18,6 +24,12 @@ const duan1Assets: Record<string, { url: string }> = {
   "duan1-19": duan1_19,
   "duan1-20": duan1_20,
   "duan1-21": duan1_21,
+  "duan2-1": duan2_1,
+  "duan2-2": duan2_2,
+  "duan2-3": duan2_3,
+  "duan2-4": duan2_4,
+  "duan2-5": duan2_5,
+  "duan2-6": duan2_6,
 };
 import {
   FolderTree,
@@ -244,11 +256,19 @@ const projects = [
       "Đánh giá nguồn theo 5 tiêu chí giúp loại bỏ tài liệu thiếu căn cứ và nâng cao chất lượng nghiên cứu.",
       "Cần kết hợp cả nguồn nền tảng (kinh điển) và nguồn cập nhật để có góc nhìn đầy đủ.",
     ],
-    evidence: "Báo cáo Word: 'Tìm kiếm và đánh giá thông tin học thuật – Hiệu ứng chim mồi (Decoy Effect)'",
+    evidence: "Báo cáo Word và ảnh chụp màn hình các nguồn học thuật đã tra cứu (Decoy Effect).",
     evidenceFile: {
       name: "BaoCao_DecoyEffect.docx",
       label: "Tải báo cáo Word (Decoy Effect)",
     },
+    evidenceImages: [
+      { src: "duan2-1", caption: "ScienceDirect – Herne (1997): Decoy alternatives in policy choices" },
+      { src: "duan2-2", caption: "JSTOR (PDF) – Huber & Puto (1983): Market Boundaries and Product Choice" },
+      { src: "duan2-3", caption: "JSTOR – Huber, Payne & Puto (2014): Let's Be Honest About the Attraction Effect" },
+      { src: "duan2-4", caption: "JSTOR – Huber, Payne & Puto (1982): Adding Asymmetrically Dominated Alternatives" },
+      { src: "duan2-5", caption: "Springer – Thaler & Sunstein: Nudge (book review)" },
+      { src: "duan2-6", caption: "Springer – Kahneman (2011): Thinking, Fast and Slow (book review)" },
+    ],
     strengths: [
       "Thu thập được 10 tài liệu đa dạng: 7 bài báo khoa học + 3 sách chuyên khảo nổi tiếng.",
       "Đánh giá có hệ thống theo 5 tiêu chí: Tác giả, Cơ quan xuất bản, Phương pháp, Trích dẫn, Tính cập nhật.",
@@ -1493,6 +1513,19 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
                   </figure>
                 ))}
               </div>
+              {p.evidenceFile && (
+                <a
+                  href={duan2Baocao.url}
+                  download={p.evidenceFile.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-fit items-center gap-2 rounded-xl border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-medium text-foreground transition hover:bg-primary/20"
+                >
+                  <BookOpen className="h-4 w-4 text-primary" />
+                  {p.evidenceFile.label}
+                  <span className="text-xs text-muted-foreground">({p.evidenceFile.name})</span>
+                </a>
+              )}
             </div>
           ) : p.evidenceFile ? (
             <div className="space-y-3">
