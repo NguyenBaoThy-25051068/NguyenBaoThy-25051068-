@@ -5,6 +5,7 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 // so the app builds normally against the Cloudflare preset.
 const basePath = process.env.BASE_PATH || "/";
 const isStaticBuild = process.env.STATIC_BUILD === "1";
+const routerBasepath = basePath === "/" ? "/" : basePath.replace(/^\/+|\/+$/g, "");
 
 export default defineConfig({
   vite: {
@@ -14,6 +15,7 @@ export default defineConfig({
     ? {
         nitro: { preset: "static" as const },
         tanstackStart: {
+          router: { basepath: routerBasepath },
           server: { entry: "server" },
           prerender: { enabled: true, crawlLinks: true },
           pages: [{ path: "/" }],
