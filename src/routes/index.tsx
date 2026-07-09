@@ -9,6 +9,12 @@ import duan1_18 from "@/assets/duan1-18.png.asset.json";
 import duan1_19 from "@/assets/duan1-19.png.asset.json";
 import duan1_20 from "@/assets/duan1-20.png.asset.json";
 import duan1_21 from "@/assets/duan1-21.png.asset.json";
+import duan2_1 from "@/assets/duan2-1.png.asset.json";
+import duan2_2 from "@/assets/duan2-2.png.asset.json";
+import duan2_3 from "@/assets/duan2-3.png.asset.json";
+import duan2_4 from "@/assets/duan2-4.png.asset.json";
+import duan2_5 from "@/assets/duan2-5.png.asset.json";
+import duan2_6 from "@/assets/duan2-6.png.asset.json";
 
 const duan1Assets: Record<string, { url: string }> = {
   "duan1-15": duan1_15,
@@ -18,6 +24,12 @@ const duan1Assets: Record<string, { url: string }> = {
   "duan1-19": duan1_19,
   "duan1-20": duan1_20,
   "duan1-21": duan1_21,
+  "duan2-1": duan2_1,
+  "duan2-2": duan2_2,
+  "duan2-3": duan2_3,
+  "duan2-4": duan2_4,
+  "duan2-5": duan2_5,
+  "duan2-6": duan2_6,
 };
 import {
   FolderTree,
