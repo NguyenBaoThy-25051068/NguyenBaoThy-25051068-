@@ -15,6 +15,8 @@ import duan2_3 from "@/assets/duan2-3.png.asset.json";
 import duan2_4 from "@/assets/duan2-4.png.asset.json";
 import duan2_5 from "@/assets/duan2-5.png.asset.json";
 import duan2_6 from "@/assets/duan2-6.png.asset.json";
+import duan3_1 from "@/assets/duan3-1.png.asset.json";
+import duan3_2 from "@/assets/duan3-2.png.asset.json";
 
 const duan1Assets: Record<string, { url: string }> = {
   "duan1-15": duan1_15,
