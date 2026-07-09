@@ -1513,6 +1513,19 @@ function ProjectCard({ p, index }: { p: (typeof projects)[number]; index: number
                   </figure>
                 ))}
               </div>
+              {p.evidenceFile && (
+                <a
+                  href={duan2Baocao.url}
+                  download={p.evidenceFile.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-fit items-center gap-2 rounded-xl border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-medium text-foreground transition hover:bg-primary/20"
+                >
+                  <BookOpen className="h-4 w-4 text-primary" />
+                  {p.evidenceFile.label}
+                  <span className="text-xs text-muted-foreground">({p.evidenceFile.name})</span>
+                </a>
+              )}
             </div>
           ) : p.evidenceFile ? (
             <div className="space-y-3">
