@@ -512,7 +512,17 @@ const projects = [
       "AI là công cụ hỗ trợ sáng tạo, không thay thế hoàn toàn tư duy cá nhân.",
       "Cần biết chọn lọc, biên tập và chịu trách nhiệm với nội dung do mình phát hành.",
     ],
-    evidence: "Video sản phẩm hoặc ảnh khung hình đại diện",
+    evidence: "Ảnh minh họa sản phẩm nội dung số do AI hỗ trợ tạo ra và báo cáo bài 5.",
+    evidenceImages: [
+      { src: "duan5-1", caption: "Infographic “AI in University Learning” – 5 phần: Introduction, Benefits, Challenges, Responsible AI Use, Key Takeaways." },
+      { src: "duan5-2", caption: "Prompt DALL·E: “Flat illustration of university students using AI for studying, blue vector style.”" },
+      { src: "duan5-3", caption: "Prompt hoàn chỉnh cho infographic A4 – tông xanh trắng, phong cách học thuật hiện đại." },
+    ],
+    evidenceFile: {
+      name: "Bài 5- Nguyễn Bảo Thy.docx",
+      label: "Tải báo cáo Word (Bài 5 – Nguyễn Bảo Thy)",
+      url: duan5Baocao.url,
+    },
     strengths: [
       "Thiết kế có tính thẩm mỹ cao, phù hợp với chủ đề Prompt Engineering.",
       "Kết hợp tốt giữa hình ảnh, giọng đọc và văn bản để tạo video dễ hiểu.",
