@@ -22,6 +22,10 @@ import duan5_1 from "@/assets/duan5-1.png.asset.json";
 import duan5_2 from "@/assets/duan5-2.png.asset.json";
 import duan5_3 from "@/assets/duan5-3.png.asset.json";
 import duan5Baocao from "@/assets/duan5-baocao.docx.asset.json";
+import duan6_1 from "@/assets/duan6-1.png.asset.json";
+import duan6_2 from "@/assets/duan6-2.png.asset.json";
+import duan6_3 from "@/assets/duan6-3.png.asset.json";
+import duan6Baocao from "@/assets/duan6-baocao.docx.asset.json";
 
 const duan1Assets: Record<string, { url: string }> = {
   "duan1-15": duan1_15,
