@@ -50,13 +50,10 @@ jobs:
           if [ ! -d "$OUT_DIR" ]; then
             echo "Build output directory $OUT_DIR not found"; ls -la dist || true; exit 1
           fi
-          # SPA shell produced by TanStack Start prerender
-          if [ -f "$OUT_DIR/_shell.html" ]; then
-            cp "$OUT_DIR/_shell.html" "$OUT_DIR/index.html"
-          fi
           if [ ! -f "$OUT_DIR/index.html" ]; then
             echo "index.html not found in $OUT_DIR"; find "$OUT_DIR" -maxdepth 2 -type f | sort; exit 1
           fi
+          test -s "$OUT_DIR/index.html" || { echo "index.html is empty"; exit 1; }
           # SPA fallback for GitHub Pages deep-linking
           cp "$OUT_DIR/index.html" "$OUT_DIR/404.html"
           touch "$OUT_DIR/.nojekyll"
