@@ -1702,31 +1702,45 @@ function EvidenceGallery() {
           desc="Thư viện minh chứng trực quan cho toàn bộ quá trình học tập. Có thể thay các ảnh placeholder bằng minh chứng thật."
         />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {evidence.map((e) => (
+          {evidence.map((e) => {
+            const imgUrl = e.image ? duan1Assets[e.image]?.url : undefined;
+            return (
             <div
               key={e.title}
               className="reveal card-hover overflow-hidden rounded-3xl border border-border bg-card"
             >
-              <div
-                className="grid aspect-video place-items-center"
-                style={{
-                  background:
-                    e.tone === "pink"
-                      ? "linear-gradient(135deg, oklch(0.94 0.06 340), oklch(0.92 0.08 320))"
-                      : "linear-gradient(135deg, oklch(0.93 0.07 220), oklch(0.94 0.06 200))",
-                }}
-              >
-                <e.icon className="h-10 w-10 text-foreground/70" />
-              </div>
+              {imgUrl ? (
+                <a href={e.href} className="block aspect-video overflow-hidden bg-muted">
+                  <img
+                    src={imgUrl}
+                    alt={e.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </a>
+              ) : (
+                <div
+                  className="grid aspect-video place-items-center"
+                  style={{
+                    background:
+                      e.tone === "pink"
+                        ? "linear-gradient(135deg, oklch(0.94 0.06 340), oklch(0.92 0.08 320))"
+                        : "linear-gradient(135deg, oklch(0.93 0.07 220), oklch(0.94 0.06 200))",
+                  }}
+                >
+                  <e.icon className="h-10 w-10 text-foreground/70" />
+                </div>
+              )}
               <div className="p-5">
                 <h3 className="text-base font-semibold">{e.title}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">{e.desc}</p>
-                <button className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-foreground hover:gap-2 transition-all">
+                <a href={e.href} className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-foreground hover:gap-2 transition-all">
                   Xem chi tiết <ArrowRight className="h-4 w-4" />
-                </button>
+                </a>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
