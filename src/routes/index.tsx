@@ -32,7 +32,7 @@ const ASSET_ORIGIN = "https://kind-logic-mate.lovable.app";
 const assetUrl = (asset?: { url?: string } | string) => {
   const url = typeof asset === "string" ? asset : asset?.url;
   if (!url) return undefined;
-  return url.startsWith("/__l5e") ? `${ASSET_ORIGIN}${url}` : url;
+  return encodeURI(url.startsWith("/__l5e") ? `${ASSET_ORIGIN}${url}` : url);
 };
 
 
