@@ -32,6 +32,8 @@ const duan1Assets: Record<string, { url: string }> = {
   "duan2-4": duan2_4,
   "duan2-5": duan2_5,
   "duan2-6": duan2_6,
+  "duan3-1": duan3_1,
+  "duan3-2": duan3_2,
 };
 import {
   FolderTree,
