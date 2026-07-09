@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [main, master]
   workflow_dispatch:
 
 permissions:
@@ -27,9 +27,20 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile || bun install
 
+      - name: Detect GitHub Pages base path
+        shell: bash
+        run: |
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+          OWNER_LOWER="$(echo "$GITHUB_REPOSITORY_OWNER" | tr '[:upper:]' '[:lower:]')"
+          REPO_LOWER="$(echo "$REPO_NAME" | tr '[:upper:]' '[:lower:]')"
+          if [ "$REPO_LOWER" = "$OWNER_LOWER.github.io" ]; then
+            echo "BASE_PATH=/" >> "$GITHUB_ENV"
+          else
+            echo "BASE_PATH=/$REPO_NAME/" >> "$GITHUB_ENV"
+          fi
+
       - name: Build (static)
         env:
-          BASE_PATH: /NguyenBaoThy-25051068/
           STATIC_BUILD: "1"
         run: bun run build
 
@@ -42,6 +53,9 @@ jobs:
           done
           if [ -z "$OUT_DIR" ]; then
             echo "Build output directory not found"; ls -la; ls -la .output || true; exit 1
+          fi
+          if [ ! -f "$OUT_DIR/index.html" ]; then
+            echo "index.html not found in $OUT_DIR"; find "$OUT_DIR" -maxdepth 2 -type f | sort; exit 1
           fi
           echo "Using $OUT_DIR"
           # SPA fallback for GitHub Pages deep-linking
