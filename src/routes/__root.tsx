@@ -83,18 +83,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Portfolio kỹ thuật số cá nhân – hành trình học tập môn Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo qua 6 dự án thực hành.",
       },
-      { property: "og:title", content: "Portfolio Kỹ thuật số cá nhân" },
+      { property: "og:title", content: "Portfolio Kỹ thuật số cá nhân | Nhập môn CNS & AI" },
       {
         property: "og:description",
         content:
-          "Hành trình học tập môn Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo.",
+          "Portfolio kỹ thuật số cá nhân – hành trình học tập môn Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo qua 6 dự án thực hành.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Portfolio Kỹ thuật số cá nhân | Nhập môn CNS & AI" },
+      { name: "twitter:description", content: "Portfolio kỹ thuật số cá nhân – hành trình học tập môn Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo qua 6 dự án thực hành." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c54f8d45-4e2e-4eb7-bd0d-1e1870efa1ab/id-preview-089d0aea--670f5d1a-7905-4562-973f-43dc03fd8fdb.lovable.app-1783569188332.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c54f8d45-4e2e-4eb7-bd0d-1e1870efa1ab/id-preview-089d0aea--670f5d1a-7905-4562-973f-43dc03fd8fdb.lovable.app-1783569188332.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
