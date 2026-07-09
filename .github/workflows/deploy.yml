@@ -1,0 +1,68 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile || bun install
+
+      - name: Build (static)
+        env:
+          BASE_PATH: /NguyenBaoThy-25051068/
+          STATIC_BUILD: "1"
+        run: bun run build
+
+      - name: Prepare output
+        run: |
+          # TanStack Start + nitro static output goes to .output/public
+          OUT_DIR=""
+          for d in .output/public dist .output/static; do
+            if [ -d "$d" ]; then OUT_DIR="$d"; break; fi
+          done
+          if [ -z "$OUT_DIR" ]; then
+            echo "Build output directory not found"; ls -la; ls -la .output || true; exit 1
+          fi
+          echo "Using $OUT_DIR"
+          # SPA fallback for GitHub Pages deep-linking
+          if [ -f "$OUT_DIR/index.html" ] && [ ! -f "$OUT_DIR/404.html" ]; then
+            cp "$OUT_DIR/index.html" "$OUT_DIR/404.html"
+          fi
+          touch "$OUT_DIR/.nojekyll"
+          echo "OUT_DIR=$OUT_DIR" >> $GITHUB_ENV
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.OUT_DIR }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
